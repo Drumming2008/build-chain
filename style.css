@@ -1,0 +1,33 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    color-scheme: dark;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    flex-shrink: 0;
+}
+
+#search {
+    width: 50%;
+}
+
+main {
+    flex-grow: 1;
+    padding: 8px;
+}
+
+article {
+    outline: 1px solid gray;
+    height: 100%;
+    border-radius: 16px;
+}
