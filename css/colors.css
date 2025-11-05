@@ -1,0 +1,16 @@
+:root {
+    --bg-0: #131314;
+    --bg-1: #1e2123;
+    --bg-2: #2b3033;
+    --bg-3: #3b4246;
+    --bg-4: #4d565b;
+    --bg-5: #606b71;
+
+    --btn-active: #3b42467f;
+    --btn: #4d565b7f;
+    --btn-hover: #606b717f;
+
+    --color: #ffffff;
+
+    --accent-0: #55aede;
+}

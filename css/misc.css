@@ -1,0 +1,13 @@
+i {
+    font-size: 1.25rem;
+}
+
+/* annoying little x button on input[type="search"] */
+::-webkit-search-cancel-button {
+    display: none;
+}
+
+/* google translate extension is interfering with the dictionary popups  */
+#gtx-trans {
+    display: none !important;
+}

@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    flex-shrink: 0;
+    background: var(--bg-1);
+    position: relative;
+    z-index: 2;
+}
+
+#search-wrapper {
+    width: 50%;
+    position: relative;
+}
+
+#search {
+    height: 48px;
+    border-radius: 100px;
+    padding-left: 24px;
+    padding-right: 48px;
+    border: none;
+    width: 100%;
+    background: var(--bg-2);
+}
+
+#search-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}

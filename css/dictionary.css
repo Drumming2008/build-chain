@@ -1,0 +1,6 @@
+#dictionary-tooltip {
+    position: fixed;
+    padding: 4px;
+    background: var(--bg-1);
+    transform: translate(-4px, -4px);
+}

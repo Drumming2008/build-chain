@@ -1,0 +1,58 @@
+:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 0 var(--accent-0);
+}
+
+:not(input):focus-visible {
+    box-shadow: 0px 0px 0px 2px var(--accent-0);
+}
+
+* {
+    box-sizing: border-box;
+    border: none;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+}
+
+:not(h1, h2, h3, h4, h5, h6, i) {
+    font-size: inherit;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    color-scheme: dark;
+    background: var(--bg-1);
+    overflow: hidden;
+    color: var(--color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    padding: 8px;
+    padding-top: 0;
+    height: 100%;
+}
+
+/* buttons :) */
+
+button {
+    cursor: pointer;
+    transition: background 0.1s linear, box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* secondary (basic gray button) */
+
+.secondary:hover {
+    background: var(--btn);
+}
+
+.secondary:active {
+    background: var(--btn-active);
+}
