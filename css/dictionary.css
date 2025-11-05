@@ -1,6 +1,34 @@
 #dictionary-tooltip {
-    position: fixed;
+    position: absolute;
     padding: 4px;
     background: var(--bg-1);
-    transform: translate(-4px, -4px);
+    /* transform: translate(-4px, -4px); */
+}
+
+.dictionary-button {
+    position: absolute;
+    margin: -4px;
+    padding: 4px;
+    /* background: red; */
+    height: 1em;
+    width: 1em;
+    font-family: var(--article-font);
+    outline: 1px solid var(--bg-5);
+    border-radius: 4px;
+}
+
+.dictionary-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-0);
+    z-index: -1;
+}
+
+.dictionary-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    z-index: -1;
 }

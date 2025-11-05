@@ -5,7 +5,7 @@ article {
     padding: 16px;
     line-height: 1.5; /* i know this should be bigger to actually be readable but idk what it should be, ayush prolly knows */
 
-    font-family: serif /* maybe we can let the user change the font this uses? */;
+    font-family: var(--article-font) /* maybe we can let the user change the font this uses? */;
     background: var(--bg-0); /* also would be cool to have a setting to show articles in light mode */
 }
 

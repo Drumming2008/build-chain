@@ -11,6 +11,7 @@
 :root {
     --header-font: dm-serif-display, serif;
     --base-font: outfit, system-ui, sans-serif;
+    --article-font: serif;
 }
 
 html {
