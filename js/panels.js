@@ -170,22 +170,49 @@ function openPanel(name, data = null) {
                     entry.style.gap = "8px"
                     wrapper.append(entry)
 
-                    if (json.message) entry.innerHTML = `
+                    if (json[0].message) entry.innerHTML = `
                         <h3>No Word Found</h3>
                     `
 
                     entry.innerHTML = `
-                        <h3>${i.word} <span style="opacity: 0.5;">${i.phonetic || ""}</span></h3>
+                        <h3>${capitalizeFirstLetter(i.word)} <span style="opacity: 0.5;">${i.phonetic || ""}</span></h3>
                     `
 
                     if (i.meanings) for (let j of i.meanings) {
                         entry.innerHTML += `
-                            <h4 style="border-bottom: 1px solid var(--bg-5);">${j.partOfSpeech}</h4>
+                            <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalizeFirstLetter(j.partOfSpeech)}</h4>
                         `
                         for (let k of j.definitions) {
                             entry.innerHTML += `
                                 ${k.definition}
                             `
+                        }
+                    }
+
+
+                    if (i.phonetics) for (let p of i.phonetics) {
+                        if (p.audio) {
+                            let audioButton = document.createElement("button")
+                            audioButton.classList.add("dictionary-audio")
+                            audioButton.classList.add("secondary")
+                            let audioIcon = document.createElement("i")
+                            audioIcon.className = "ph ph-speaker-high"
+                            audioButton.append(audioIcon)
+                            entry.querySelector("h3").append(audioButton)
+                            
+                            let audio = new Audio(p.audio)
+
+                            audio.onended = () => {
+                                audioIcon.classList.remove("ph-fill")
+                                audioIcon.classList.add("ph")
+                            }
+
+                            audioButton.onclick = () => {
+                                audio.currentTime = 0
+                                audio.play()
+                                audioIcon.classList.add("ph-fill")
+                                audioIcon.classList.remove("ph")
+                            }
                         }
                     }
                 }
