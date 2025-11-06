@@ -6,6 +6,8 @@
     --bg-4: #4d565b;
     --bg-5: #606b71;
 
+    --border: var(--bg-5);
+
     --btn-active: #3b42467f;
     --btn: #4d565b7f;
     --btn-hover: #606b717f;
@@ -15,5 +17,5 @@
     --accent-0: #55aede;
 
     --article-width: min(700px, calc(100vw - 16px));
-    --panel-width: 324px;
+    --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);
 }
