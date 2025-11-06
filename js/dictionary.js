@@ -31,48 +31,48 @@ function hideDictionaryToolTip() {
 // }
 
 
-document.addEventListener("mouseup", () => {
-  // let selection = window.getSelection()
-  // if (!selection.rangeCount) return
-
-  // showDictionaryToolTip()
-
-  // let text = selection.toString()
-  // dictionaryTooltip.innerText = text
-
-  // let range = selection.getRangeAt(0).cloneRange()
-  // range.collapse(false) // move to the end of the selection
-  // range.insertNode(dictionaryTooltip)
-
-  // insertButtonAtSelection()
-
+document.addEventListener("mouseup", e => {
+  if (e.target.classList.contains("dictionary-button") && !id("article").contains(e.target) && !e.target.classList.contains("dictionary-button")) return
   let selection = window.getSelection()
   if (!selection.rangeCount) return
   if (selection.baseOffset == selection.extentOffset) return
+
+  let text = selection.toString().trim()
+  if (!/^[A-Za-zÀ-ÿ'’-]+$/.test(text)) return
 
   let range = selection.getRangeAt(0)
   let rect = range.getBoundingClientRect()
 
   let selectionButton = document.createElement("button")
-  selectionButton.innerText = selection.anchorNode.textContent.substring(selection.baseOffset, selection.extentOffset)
+  selectionButton.innerHTML = "<i class='ph ph-book-open-text'></i>"
   selectionButton.className = "dictionary-button secondary"
   selectionButton.style.position = "absolute"
-  selectionButton.style.left = rect.left + window.scrollX + "px"
-  selectionButton.style.top = rect.top + window.scrollY + "px"
-  selectionButton.style.width = rect.width + 8 + "px"
-  selectionButton.style.height = rect.height + 8 + "px"
-  selectionButton.style.pointerEvents = "auto"
+
+  function positionThisButton() {
+    selectionButton.style.left = rect.left + rect.width / 2 + 4 + "px"
+    selectionButton.style.top = rect.top + rect.height + 8 + "px"
+    // selectionButton.style.width = rect.width + 8 + "px"
+    // selectionButton.style.height = rect.height + 8 + "px"
+  }
+
+  positionThisButton()
+
+  document.addEventListener("resize", positionThisButton)
+  document.addEventListener("wheel", positionThisButton)
+
   selectionButton.style.zIndex = 9999
+
+  selectionButton.onclick = () => {
+    openPanel("dictionary", text.toLowerCase())
+    for (let i of document.querySelectorAll(".dictionary-button")) {
+      i.remove()
+    }
+  }
 
   document.body.appendChild(selectionButton)
 
   document.addEventListener("mousedown", e => {
-    if (e.target == selectionButton) return
+    if (e.target == selectionButton || e.target.parentElement.classList.contains("dictionary-button")) return
     selectionButton.remove()
   })
-
-  document.querySelector("article").addEventListener("scroll", () => {
-    selectionButton.remove()
-  })
-
 })

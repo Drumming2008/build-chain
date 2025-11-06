@@ -10,7 +10,7 @@ header {
 }
 
 #search-wrapper {
-    width: 50%;
+    width: var(--article-width);
     position: relative;
 }
 

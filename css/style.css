@@ -13,6 +13,8 @@
     padding: 0;
     color: inherit;
     background: transparent;
+
+    line-height: 1.5; /* i know this should be bigger to actually be readable but idk what it should be, ayush prolly knows */
 }
 
 :not(h1, h2, h3, h4, h5, h6, i) {
@@ -35,8 +37,7 @@ body {
 
 main {
     flex-grow: 1;
-    padding: 8px;
-    padding-top: 0;
+    padding-bottom: 8px;
     height: 100%;
 }
 
@@ -45,6 +46,9 @@ main {
 button {
     cursor: pointer;
     transition: background 0.1s linear, box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* secondary (basic gray button) */
@@ -55,4 +59,32 @@ button {
 
 .secondary:active {
     background: var(--btn-active);
+}
+
+#panel {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+
+    padding: 16px;
+
+    background: var(--bg-0);
+    border-radius: 16px;
+    width: var(--panel-width);
+    height: calc(100% - 72px);
+    transition: right 0.4s ease;
+    overflow-y: auto;
+}
+
+#panel h2:first-child {
+    margin-top: 0;
+}
+
+#close-panel {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }

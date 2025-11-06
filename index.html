@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Build Chain</title>
         <link rel="stylesheet" href="./css/fonts.css">
-        <link rel="stylesheet" href="./css/colors.css">
+        <link rel="stylesheet" href="./css/variables.css">
         <link rel="stylesheet" href="./css/misc.css">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/header.css">
@@ -22,7 +22,17 @@
         </header>
         <main>
             <!-- all the ai, dictionary, whatever panels go here -->
-            <article>
+            <div id="panel">
+                <button class="secondary" id="close-panel">
+                    <i class="ph ph-x"></i>
+                </button>
+                <div data-panel="dictionary">
+                    <h2>Dictionary</h2>
+                    <div id="dictionary-entries"></div>
+                </div>
+            </div>
+
+            <article id="article">
                 <!-- all the cheese content goes here -->
                 <h2>
                     Wikipedia:List of really, really, really stupid article ideas that you really, really, really should not create
@@ -215,7 +225,9 @@
                 </p>
             </article>
         </main>
+        <script src="./js/helper.js"></script>
         <script src="./js/icons.js"></script>
+        <script src="./js/panels.js"></script>
         <script src="./js/dictionary.js"></script>
     </body>
 </html>

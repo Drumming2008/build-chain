@@ -1,12 +1,17 @@
 article {
-    height: calc(100% - 64px);
+    height: calc(100% - 72px);
+    width: var(--article-width);
+    /* margin: 0 calc((100vw - var(--article-width)) / 2); */
+    position: absolute;
+    right: calc((100vw - var(--article-width)) / 2);
     overflow: auto;
     border-radius: 16px;
     padding: 16px;
-    line-height: 1.5; /* i know this should be bigger to actually be readable but idk what it should be, ayush prolly knows */
 
     font-family: var(--article-font) /* maybe we can let the user change the font this uses? */;
     background: var(--bg-0); /* also would be cool to have a setting to show articles in light mode */
+
+    transition: right 0.4s ease;
 }
 
 article :first-child {
