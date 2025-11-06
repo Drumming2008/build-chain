@@ -16,11 +16,31 @@
         <!-- idk what we need but prolly a search bar? -->
         <header>
             <div id="search-wrapper">
-                <input type="search" id="search" placeholder="Search">
+                <input type="search" id="search">
                 <button id="search-button" class="secondary"><i class="ph ph-magnifying-glass"></i></button>
             </div>
-            <div id="progress"></div>
+            <button id="regenerate-button">regenerate</button>
         </header>
+        <div id="regenerate-controls" style="display: none; padding: 12px; background: var(--bg-2); border-bottom: 1px solid var(--bg-5); gap: 8px;">
+            <select id="style-select">
+                <option value="casual">casual</option>
+                <option value="formal">formal</option>
+                <option value="humorous">humorous</option>
+                <option value="academic">academic</option>
+            </select>
+            <select id="length-select">
+                <option value="shorter">shorter</option>
+                <option value="same" selected>same</option>
+                <option value="longer">longer</option>
+            </select>
+            <select id="technicalness-select">
+                <option value="simple">simple</option>
+                <option value="moderate" selected>moderate</option>
+                <option value="technical">technical</option>
+            </select>
+            <button id="regenerate-go">go</button>
+            <span id="regenerate-status"></span>
+        </div>
         <main>
             <!-- all the ai, dictionary, whatever panels go here -->
             <div id="panel">
@@ -38,185 +58,7 @@
                 <h2>
                     Wikipedia:List of really, really, really stupid article ideas that you really, really, really should not create
                 </h2>
-                <p>An article about or described by any of the following can be safely assumed to fit into the set of unnecessary articles:
-                    Creating or editing an article just to show off a picture of a cute cat or dog is always a terrible idea. Besides, there's always someone somewhere who thinks their cat is cuter.
-                    You, your family, or the organization you work for.
-                    Your band, which has only sold 47 copies of its one album. Even if you think it will sell 48. Or maybe 49! Or, if you get really lucky, you can pay off the record store owner so that he may buy one and your sales will have gone up to fifty!!! Keep dreamin', brotha.
-                    Your imaginary friend or your imaginary friends that don't even exist.[citation needed]
-                    The religion, language, or country that you made up with your friends in school one day.
-                    The street you live on, unless it is on a Monopoly board. But since it is highly unlikely that you live on a Monopoly game board, we suggest that you not even try.
-                    Any one of the many regions in the Pokémon video game series or lieking mudkipz, or hering dat someon lieks mudkipz. Or a random ship that includes Ash Ketchum and (insert random girl here). Remember, not everyone is a Pokémon fanatic.
-                    A stunt or trick only you have ever attempted, probably unsuccessfully.
-                    Any movie you made yourself which has never been seen by more people at one time than can fit in your basement. Even if you have a really big basement.
-                    Individual songs that have never been released as a single nor seen radio play, unless they're twenty minutes long or have led to a phone number becoming unusable or even have questioned the essence of music itself.
-                    "(Anything) in popular culture." Anything at all.
-                    Likewise, "Hysterical Realism in the Works of (insert neither hysterical nor realistic author here)".
-                    Your dormitory, university residence, or any suite therein.
-                    Stuff nobody but that guy who changes his Spock ears more often than his underpants cares about, or the equivalent thereto. For example, a song about a custom map of a video game, unless you are famous and the song managed to release as a single.
-                    Anything about which you cannot be buggered to write one complete sent
-                    Subjects that cannot be studied, or the knowledge of which amounts only to the fact that it pertains to another topic. A favourite line from a movie or catchy lyric, a potent phrase used in argument, juicy facts of interest to fans, a punch-line or zinger; these are all very interesting, but usually all that can be informatively written about topic "X" is: "X is a _______ found in _______."
-                    Just about everything listed on Wikipedia:Millionth topic pool.
-                    For that matter, Wikipedia:Millionth topic pool.
-                    Anything about your cat or dog and how cute it is (or your hamster, degu, or chinchilla).
-
-                    For instance, these are far cuter.[citation needed]
-                    Exploding Whales, or indeed Exploding Wales, or even Exploding Jimbo Wales. Or blowing up any other animals; for example, exploding mice, or even exploding Velociraptor, for that matter. Most things that implode are pretty much off the list too, with a few exceptions.
-                    Anything written under the influence of recreational substances or while tired and/or emotional.
-                    An article about another article, written after the use of aforementioned substances.
-                    A fork of an existing article for the sole purpose of adding some humor.
-                    The weather in London. Not even a redirect. (Wowee)
-
-                    No matter how cute you are, expect no quarter in the cruel world of Wikipedia.
-                    Your guild in World of Warcraft or similar time wasters. Just because you have no life a personally fascinating hobby doesn't mean you get to tell the world about it. And don't write about this guy in your guild who wiped your raid, either.
-                    Something you just saw on YouTube and, possibly, laughed at.
-                    Something you just put on YouTube.
-                    An article tdat haz badly grammer and?or speelling. Insulting, bad puucnktation!!
-                    .تأي مقال لم يكتب باللغة .الإنجليزية ..ت
-                    Any meme, no matter how popular or important. We're not saying don't use your Imagination.
-                    Anything you don't know the title of.
-                    Your wiki or blog. It's probably not internationally famous. If it is, well, go ahead, but let's face it; your blog of cute cats is not internationally famous (three readers is not fame).[1]
-                    Your new invention or research paper that will change the world. Or why you think a certain politician will win the next election. Both of those will undoubtedly not happen.
-                    Anything about your cat named Bubba or your dog named Max. No one cares. Trust us.
-                    Your nomination for the Noble (or even Nobel) Peace Prize.
-                    Anything about how you were abducted by aliens.
-                    An article on the dream you had last night. No matter how long you describe it, it will never be interesting: Even if dreaming that you were the inventor of the chalk board who had to overcome obstacles from the evil book binding lobbyists deeply moved you to tears upon waking up.
-                    An article on the person that knocked on your door while you were writing the article about your dream last night, causing you to forget about the dream (but I'll be honest, I feel for you).
-                    An article about Wikpiedia, Wikipaedia, Wiokipedia, Wikipeedia, Wikipeadia, or any other Wikis that appear to be Wikipedia but aren't.
-                    An article about the media response to the Wikipedia article about the barely notable thing that shouldn't even have an article (recursivity has its limits, even here).
-                    The difference between Hoagy Carmichael and Stokely Carmichael.
-
-                    Even an article on a subject that is four times cute will not survive if it is not notable.
-                    An entry promoting your hilarious web series about Wikipedia.
-                    Recreating this dumb list. Or this one.
-                    Anything about hashtags. #IHateHashtags
-                    Anything about how fat you are or how much weight you're losing (trust us; no one cares).
-                    Headlight flashing – I know, it's preposterous, even for Wikipedia. But when you're done laughing and/or crying, follow the link. It really exists.
-                    Assumptions about the conclusions of scientific publications that you have seen the titles of, but not read.
-                    Your self-published book.
-                    McGannahan Skjellyfetti.
-                    An article about your friend's latest selfie. Or, for that matter, selfie stick. They are banned in most places anyway.
-                    Lists of times at which commercial breaks occurred during a sporting event.
-                    Your personal opinions about your (in)significant other.
-                    An article on discussing the differences between you and your close friends. It does not matter to most people in the world.
-                    An article about how Tyson Foods is run by a bunch of chicken fuckers because the main article is protected from vandalism by the legions of Internet trolls.[citation needed]
-                    Yet another list of Google Doodles.
-
-                    If you can't tell from the endless list of cat pictures in this article, individual cats are usually not notable enough for a Wikipedia article.
-                    A new sex position that you and your boys theory-crafted one night. Including whatever 54 would mean.
-                    A list of Nigerian Princes.
-                    Times Scooby-Doo has defied the laws of reality.
-                    A list of celebrity couples names for couples that you wish would get together, but as of now, haven't.
-                    Your stupid esoteric programming language you made up to 'test the boundaries of computer programming language design' and that is the bane of a lot of developers' existences.
-                    Any article related to odorous gas clouds, but particularly smelly farts.
-                    Your YouTube channel, unless you have millions of fangirls.
-                    Your opinion and/or fascination about outer space, even if there are lots of unusual exoplanets out there. Yes, we know. They're weird. No need to tell us that.
-                    Your opinion on time traveling to have dinner with the members of Bone Symphony, Bone Thugs-n-Harmony, Boney M., or The Right Honourable Bonar Law.
-                    The time you laughed about someone eating a red 5-pound (2.3 kg) gummy skull while wearing a jetpack while driving a limousine at 5 a.m. on a Tuesday in August 2018.
-                    An article that uses templates to perform math for no apparent reason besides your entertainment.
-                    Your anus and how it had very good funny time with a girl.[citation needed]
-                    The time you laughed at someone living in Fortnite (Chapter 1), even though I get that they were eaten by a black hole. Oh well, they came back!.
-                    Posting a video of yourself saying the N-word, especially if you're not Black.
-                    (haha funny number)
-                    Posting an image of yourself falling off the Burj Khalifa.
-                    Singing any Cardi B song.
-                    About the food that you find (or don't find) tasty.
-                    List of promises by politicians.
-                    Posting any number of useless messages made by bored editors of Wikipedia.
-
-                    Another cat picture.
-
-                    Here's a cat you can really sink your teeth into (or vice versa).
-                    Your low-effort school play of How the Grinch Stole Christmas!.
-                    Your high-effort Broadway play of Cats.
-                    A list of times you pinged @everyone on your Discord server.
-                    Your Sonic the Hedgehog fanart (unless you are Tyson Hesse).
-                    Your romantic relationship with sentient AI.
-                    The number of people who read this list all the way through.
-                    The number of times you've kissed a girl.
-                    List of lists of lists of lists. The only entry there would be List of lists of lists.
-                    Your sexual relationship with the cover art of "Press" by Cardi B.
-                    Times that sexual positions have saved the world from further harm.
-                    The bike horn cover of the Evangelion theme.
-                    The reason why Judy Garland was divorced by so many people.
-                    A catchphrase, like "Eat my shorts!" or "Bite my shiny metal ass!".
-                    Your collection of sticks that you pretended were firearms or swords.
-                    Your fanon ideas. What the hell is a "Sticky: His Fun GoAnimate! Adventures (1998)" VHS tape?
-                    Your conspiracy theory that emus and squids will take over the world. Worship your new squimu overlords.
-                    That time your grandma briefly dated a famous person. We do NOT care.
-                    Your high school sports teacher that played sports in a local sports club.
-                    A 6,000-page article on why Milk Duds are the work of the devil.
-                    Your random self-made car that you somehow built in a shed. It's probably worse than the original version, anyways.
-                    A local dirt track race that, let's face it, almost nobody cares about. Even if it had over 100 cars in the race. No.
-                    A list of unofficial Kirby media. Or a list of any unofficial media of any intellectual property, actually.
-                    The debate on whether Tracker is a Chihuahua or a potcake dog. (Note: It would generally make more sense for him to be a potcake).
-                    A list of reasons why you think Stacy's mom has got it going on, unless you are Fountains of Wayne.
-                    Creating an article that has no purpose. (Did we do that already?)
-                    That time you (definitely) performed a milestone.
-                    List of things that can play Bad Apple. Or actually playing it in Wikipedia. If you look in the correct area, someone did.
-                    List of things that you can run Doom on. Or actually playing it in Wikipedia, which you can't, by the way, because wikis are not game engines, right?
-                    List of your favorite moments from the 1996 movie Space Jam
-                    The best candy (It's Candy Corn)(No it's obviously licorice, duh)(nuh uh, its Skittles, get it right) (Y'all are sleeping on M&M's) (Is this some sort of joke??? Why are you leaving out Tops???) (All of you are wrong, it's actually Mike and Ikes)
-                    An article where everything consists solely of this link
-                    An article talking about how cool Uncyclopedia is (we don't really wanna know).
-                    Nonexistent shows or movies. No matter how many times you add it to pages or create a draft and act like it exists, it won't stay up for long, so don't even bother.
-                    An in-depth article on who is better between LeBron James and Michael Jordan. Like...really? C'mon. Be serious, guys.
-                    That time you got a girlfriend (Seriously, you're editing Wikipedia. Be realistic).
-                    An article about an essay that uses Hangman to explain the subject. We already have the essay, don't need the article too.
-                    An article that is just a resume so you can possibly get hired by people who googled your name. It’s not quirky, it’s just unsourced advertising. Unless you're really famous or something.
-                    An article about the basement you live in. Nobody, especially girls, are going to want to enter your parents' home, dude. Ok, maybe your girlfriend - but nobody else.
-                    An article about the sand castle you made in 3rd grade.
-                    A 77-page essay as to why Caravan Palace is the best band in the universe. <|°_°|>
-                    A list of the times the film Foodfight! made you want to cry into your Cheerios. Me too, buddy.
-                    A list of the times the film Grave of the Fireflies made you want to cry into your Cheerios, but in a good way.
-                    Some erotic fanfiction you found on the internet that you happened to like.
-                    Anything involving asking how to create an article on Wikipedia, Wookieepedia, Wikpedia, Wekpidea, Wekipogia, or any variations of the word.
-                    Similarly, an article on how to create "a Wikipedia".
-                    Something from this trash pit you found funny and want to make a reality. It was deleted for a reason.
-                    Getting famous by doing nothing (which there is an article about, for some reason).
-                    Somebody's buttocks.
-                    Seeing Star Wars 27 times.
-                    An article about yourself if you're called Andrew you really, really want an article about yourself because you aspire to be a standards-setting mathematician one day.
-                    Any article that mentions how many friends you have or your general state of mind.
-                    Any article about the Cold War.
-                    Any article about something you don't have.
-                    An in-depth article on who is better between Lionel Messi and Cristiano Ronaldo. Or Shohei Ohtani and Babe Ruth. Or any two athletes for that matter. Seriously.
-                    An article on why school is cool.
-                    An article on why school is lame.
-                    An article that explains your detailed lists of what you love, like, dislike, hate, and fear.
-                    An article that explains what you did home alone.
-                    An article that talks about your first steps, words, vacation, and the time you started school.
-                    An article about an insignificant power outage that affected your neighborhood and a few others, that left you in the dark for a while. Seriously, no one cares.
-                    Battle for Dream Island. Trust me. Never mind!
-                    The object show that you made in Microsoft PowerPoint.
-                    アニメを使って日本語を学ぶ方法についての記事。成功しないでしょう。そして、字幕なしでアニメを見られる程度の日本語を学ぼうとするあなたの努力も無駄でしょう。
-                    An article about how much cheese is on the Moon. It's none, by the way.
-                    An article endorsing some impossible mega-project .
-                    An article that endorses any impossible megacity for that matter.
-                    An article about reasons why your girlfriend left you.
-                    An article about a stupid food you made up. (It sucks).
-                    An article about how Driver X or Driver Y is the best Formula 1 driver ever, even if there is proof that they are really good.
-                    An article about how your favorite sports team somehow managed to disappoint their fans yet again.
-                    A list of matches played by two random teams who just so happen to have a rivalry with each other.
-                    A boring video game that you made on Scratch in the span of 10 minutes.
-                    An epic video game that you made on Scratch in the span of a month. It's still not notable.
-                    An excellent video game that you made on Unity in the span of 1 year, but nobody plays it, thus it is not notable.
-                    Your review of an anime that has an obvious bias towards it because you just you find the female characters so conveniently attractive. Go watch real anime instead.
-                    Your review of a video game that has an obvious bias against it because you think the game is broken, but you just suck at it. Get good.
-                    Your review of a movie that has an obvious bias against it because you didn't expect it to be so mature. Maybe watch the trailer next time?
-                    A list of times the "Vandalism on Wikipedia" page was vandalised.
-                    A list of times the page for Wikipedia's policy of vandalism was vandalised.
-                    A list of times Wikipedia's guide on cleaning up vandalism was vandalised. Are these even funny in the first place?
-                    The relations of two different countries that have had little to no interaction at all.
-                    Your low effort attempt to create a new meme.
-                    Your attempt to explain "deep meanings" in an anime that's either nothing but fan service or CGDCT.
-                    Your attempt to explain that a movie that is critically acclaimed and beloved by audiences is actually really bad and nobody should like it.
-                    The Minecraft server that you played on for 2 weeks and immediately got bored of it once you fell into lava and died.
-                    The fictional country that you made on your Minecraft server.
-                    Your conspiracy theory that suggests that two world leaders are in love.
-                    Any fanon wiki. (Not to be confused with fan wikis, which are perfectly fine)
-                    An essay on why Uncyclopedia is unreliable and you should never cite it.
-                    The Let's Play series on your YouTube channel that you abandoned after a couple episodes.
-                    Your solution to any ongoing war.
+                <p>
                     Your idea for a war that would probably end the world.
                     A list of TV shows that you consider fell off.
                     A list of movies, TV shows and video games that you consider underrated, but, in reality, are probably bad.
@@ -230,5 +72,6 @@
         <script src="./js/icons.js"></script>
         <script src="./js/panels.js"></script>
         <script src="./js/dictionary.js"></script>
+        <script src="./js/regenerate.js"></script>
     </body>
 </html>
