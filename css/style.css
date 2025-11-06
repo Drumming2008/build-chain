@@ -51,6 +51,12 @@ button {
     justify-content: center;
 }
 
+.pill {
+    padding: 0 16px;
+    border-radius: 100px;
+    min-height: 40px;
+}
+
 /* secondary (basic gray button) */
 
 .secondary:hover {
