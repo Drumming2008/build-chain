@@ -12,7 +12,8 @@
 .settings-radio-label {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 8px;
+    justify-content: end;
 }
 
 .setting-wrapper {
@@ -68,6 +69,7 @@ input[type="radio"]::after {
     content: "\e18a";
     display: flex;
     align-items: center;
+    justify-content: center;
     color: inherit;
     font-family: "Phosphor";
     position: absolute;
