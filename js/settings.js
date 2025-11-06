@@ -22,6 +22,29 @@ let settings = [
         value: "light"
       }
     ]
+  },
+  {
+    type: "radio",
+    label: "Article Font",
+    function: "setArticleFont",
+    buttons: [
+      {
+        label: "Times New Roman",
+        labelStyle: "font-family: serif;",
+        value: "serif",
+        default: true
+      },
+      {
+        label: "Arial",
+        labelStyle: "font-family: Arial, sans-serif;",
+        value: "Arial, sans-serif"
+      },
+      {
+        label: "Open Dyslexic",
+        labelStyle: "font-family: dyslexic-font, sans-serif;",
+        value: "dyslexic-font, sans-serif"
+      }
+    ]
   }
 ]
 
@@ -34,6 +57,10 @@ for (let i of settings) {
   label.innerHTML = `<h3>${i.label}</h3>`
   settingWrapper.append(label)
 
+  let innerWrapper = document.createElement("div")
+  innerWrapper.classList.add("settings-inner-wrapper")
+  settingWrapper.append(innerWrapper)
+
   if (i.type == "radio") {
     settingWrapper.classList.add("setting-wrapper-radio")
     for (let b of i.buttons) {
@@ -41,6 +68,7 @@ for (let i of settings) {
       label.innerText = b.label
       label.classList.add("settings-radio-label")
       label.classList.add("secondary")
+      if (b.labelStyle) label.style.cssText = b.labelStyle
       let button = document.createElement("input")
       button.type = "radio"
       button.value = b.value
@@ -58,7 +86,7 @@ for (let i of settings) {
       }
       
       label.append(button)
-      settingWrapper.append(label)
+      innerWrapper.append(label)
     }
   }
 }
@@ -67,4 +95,8 @@ function setTheme(value) {
   if (value == "light") document.documentElement.id = "light"
   else if (value == "dark") document.documentElement.id = "dark"
   else if (value == "auto") document.documentElement.id = (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+}
+
+function setArticleFont(font) {
+  id("article").style.fontFamily = font
 }

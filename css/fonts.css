@@ -1,11 +1,16 @@
 @font-face {
     font-family: dm-serif-display;
-    src: url("./fonts/dm_serif_display.ttf");
+    src: url("../fonts/dm_serif_display.ttf");
 }
 
 @font-face {
     font-family: outfit;
-    src: url("./fonts/outfit.ttf");
+    src: url("../fonts/outfit.ttf");
+}
+
+@font-face {
+    font-family: dyslexic-font;
+    src: url("../fonts/open_dyslexic_regular.woff");
 }
 
 :root {
