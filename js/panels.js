@@ -16,6 +16,10 @@ id("close-panel").onclick = () => {
 }
 
 function openPanel(name, data = null) {
+    for (let i of document.querySelectorAll("#panel > [data-panel]")) {
+        i.style.display = "none"
+    }
+
     id("panel").style.display = ""
     setTimeout(() => {
         id("panel").style.right = "8px"

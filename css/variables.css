@@ -1,3 +1,22 @@
+:root#light {
+    --bg-0: #ffffff;
+    --bg-1: #edf2fa;
+    --bg-2: #dce4ef;
+    --bg-3: #c7d1df;
+    --bg-4: #b1bdcd;
+    --bg-5: #9ba8b8;
+
+    --border: var(--bg-5);
+
+    --btn-active: #c7d1df7f;
+    --btn: #b1bdcd7f;
+    --btn-hover: #9ba8b87f;
+
+    --color: #0a0b0d;
+
+    --accent-0: #185eaa;
+}
+
 :root {
     --bg-0: #131314;
     --bg-1: #1e2123;
@@ -22,4 +41,6 @@
     --sb-track-color: var(--btn);
     --sb-thumb-color: var(--border);
     --sb-size: 4px;
+
+    --box-shadow-transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
 }

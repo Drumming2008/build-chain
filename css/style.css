@@ -45,7 +45,7 @@ main {
 
 button {
     cursor: pointer;
-    transition: background 0.1s linear, box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), outline 0.1s linear;
+    transition: background 0.1s linear, var(--box-shadow-transition), outline 0.1s linear;
     display: flex;
     align-items: center;
     justify-content: center;

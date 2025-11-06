@@ -8,6 +8,7 @@ header {
     position: relative;
     z-index: 2;
     padding: 0 8px;
+    padding-right: 64px;
 }
 
 #progress {
@@ -20,7 +21,9 @@ header {
 
 #search-wrapper {
     width: var(--article-width);
+    max-width: calc(100vw - 128px);
     position: relative;
+    left: 28px;
 }
 
 #search {
@@ -66,6 +69,14 @@ header {
 }
 
 #regenerate-button {
+    position: absolute;
+    left: 8px;
+}
+
+#settings-button {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
     position: absolute;
     right: 8px;
 }
