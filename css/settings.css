@@ -52,6 +52,7 @@
     cursor: pointer;
     flex-basis: 100%;
     text-align: center;
+    min-width: 30%;
 }
 
 input[type="radio"] {
@@ -91,6 +92,7 @@ label:has(input[type="radio"]) {
 
 label:has(input[type="radio"]:checked) {
     color: var(--accent-0);
+    background: color-mix(in srgb, var(--accent-0), transparent 90%);
 }
 
 label:has(input[type="radio"]:focus-visible) {
