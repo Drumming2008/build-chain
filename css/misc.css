@@ -1,3 +1,35 @@
+::-webkit-scrollbar {
+    width: var(--sb-size);
+    margin-right: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: grab;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--btn-hover);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--btn-active);
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    * {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
 ::selection {
     background: color-mix(in srgb, var(--accent-0), transparent);
 }

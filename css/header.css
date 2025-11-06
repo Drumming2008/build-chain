@@ -4,9 +4,17 @@ header {
     justify-content: center;
     height: 64px;
     flex-shrink: 0;
-    background: var(--bg-1);
+    background: var(--bg-0);
     position: relative;
     z-index: 2;
+}
+
+#progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent-0);
 }
 
 #search-wrapper {
@@ -21,7 +29,7 @@ header {
     padding-right: 48px;
     border: none;
     width: 100%;
-    background: var(--bg-2);
+    background: var(--bg-1);
 }
 
 #search-button {

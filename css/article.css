@@ -1,15 +1,15 @@
 article {
-    height: calc(100% - 72px);
+    height: calc(100% - 56px);
     width: var(--article-width);
     /* margin: 0 calc((100vw - var(--article-width)) / 2); */
     position: absolute;
+    bottom: 0;
     right: calc((100vw - var(--article-width)) / 2);
     overflow: auto;
-    border-radius: 16px;
     padding: 16px;
 
     font-family: var(--article-font) /* maybe we can let the user change the font this uses? */;
-    background: var(--bg-0); /* also would be cool to have a setting to show articles in light mode */
+    background: var(--bg-0);
 
     transition: right 0.4s ease;
 }

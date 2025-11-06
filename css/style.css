@@ -25,7 +25,7 @@ html, body {
     margin: 0;
     height: 100%;
     color-scheme: dark;
-    background: var(--bg-1);
+    background: var(--bg-0);
     overflow: hidden;
     color: var(--color);
 }
@@ -68,7 +68,7 @@ button {
 
     padding: 16px;
 
-    background: var(--bg-0);
+    background: var(--bg-1);
     border-radius: 16px;
     width: var(--panel-width);
     height: calc(100% - 72px);
