@@ -7,6 +7,7 @@ header {
     background: var(--bg-0);
     position: relative;
     z-index: 2;
+    padding: 0 8px;
 }
 
 #progress {
@@ -54,6 +55,7 @@ header {
     z-index: 3;
     border-radius: 0 0 16px 16px;
     align-items: center;
+    overflow: auto;
 }
 
 #regenerate-controls select {
@@ -61,4 +63,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#regenerate-button {
+    position: absolute;
+    right: 8px;
 }
