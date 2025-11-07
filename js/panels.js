@@ -32,4 +32,8 @@ function openPanel(name, data = null) {
   if (name == "dictionary") {
     updateDictionaryContent(data)
   }
+
+  if (name == "more-fonts") {
+    
+  }
 }

@@ -44,31 +44,32 @@ let settings = [
         label: "Open Dyslexic",
         labelStyle: "font-family: dyslexic-font, sans-serif;",
         value: "dyslexic-font, sans-serif"
+      },
+      {
+        type: "button",
+        label: "More Fonts…",
+        click: () => {
+          openPanel("more-fonts")
+        }
       }
     ]
   }
 ]
 
-queryLocalFonts().then(fonts => {
-  console.log("fonts", fonts)
-  for (let f of fonts) {
-    if (f.style != "Plain" && f.style != "Regular") continue
-    settings[1].buttons.push({
-      label: f.family,
-      labelStyle: `font-family: ${f.family};`,
-      value: f.family
-    })
-  }
-  loadSettings()
-})
+// queryLocalFonts().then(fonts => {
+//   console.log("fonts", fonts)
+//   for (let f of fonts) {
+//     if (f.style != "Plain" && f.style != "Regular") continue
+//     settings[1].buttons.push({
+//       label: f.family,
+//       labelStyle: `font-family: ${f.family};`,
+//       value: f.family
+//     })
+//   }
+//   loadSettings()
+// })
 
-
-
-// {
-//         label: "Open Dyslexic",
-//         labelStyle: "font-family: dyslexic-font, sans-serif;",
-//         value: "dyslexic-font, sans-serif"
-//       }
+// maybe for another day when this has a better solution
 
 
 
@@ -94,6 +95,15 @@ function loadSettings() {
     if (i.type == "radio") {
       settingWrapper.classList.add("setting-wrapper-radio")
       for (let b of i.buttons) {
+        if (b.type == "button") {
+          let button = document.createElement("button")
+          button.innerText = b.label
+          button.className = "secondary pill"
+          innerWrapper.append(button)
+          button.onclick = b.click
+          continue
+        }
+
         let label = document.createElement("label")
         label.innerText = b.label
         label.classList.add("settings-radio-label")
