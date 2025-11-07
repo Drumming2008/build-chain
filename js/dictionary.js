@@ -2,14 +2,6 @@ let dictionaryTooltip = document.createElement("span")
 dictionaryTooltip.id = "dictionary-tooltip"
 document.body.append(dictionaryTooltip)
 
-function showDictionaryToolTip() {
-  dictionaryTooltip.style.display = "block"
-}
-
-function hideDictionaryToolTip() {
-  dictionaryTooltip.style.display = "none"
-}
-
 // Source - https://stackoverflow.com/questions/1589721/get-selected-text-position-and-place-an-element-next-to-it/1589912#1589912
 // Posted by Alex Sexton
 // Retrieved 11/5/2025, License - CC-BY-SA 4.0
@@ -48,17 +40,17 @@ document.addEventListener("mouseup", e => {
   selectionButton.className = "dictionary-button secondary"
   selectionButton.style.position = "absolute"
 
-  function positionThisButton() {
+  function updatePosition() {
     selectionButton.style.left = rect.left + rect.width / 2 + 4 + "px"
     selectionButton.style.top = rect.top + rect.height + 8 + "px"
     // selectionButton.style.width = rect.width + 8 + "px"
     // selectionButton.style.height = rect.height + 8 + "px"
   }
 
-  positionThisButton()
+  updatePosition()
 
-  document.addEventListener("resize", positionThisButton)
-  document.addEventListener("wheel", positionThisButton)
+  document.addEventListener("resize", updatePosition)
+  document.addEventListener("wheel", updatePosition)
 
   selectionButton.style.zIndex = 9999
 

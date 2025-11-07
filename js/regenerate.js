@@ -54,10 +54,10 @@ Only return the rewritten text, nothing else.`
     let buffer = ""
 
     while (true) {
-      let {done, value} = await reader.read()
+      let { done, value } = await reader.read()
       if (done) break
 
-      buffer += decoder.decode(value, {stream: true})
+      buffer += decoder.decode(value, { stream: true })
       let lines = buffer.split("\n")
       buffer = lines.pop()
 

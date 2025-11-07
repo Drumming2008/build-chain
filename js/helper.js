@@ -3,5 +3,5 @@ function id(id) {
 }
 
 function capitalizeFirstLetter(val) {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1)
+    return val[0].toUpperCase() + val.slice(1)
 }

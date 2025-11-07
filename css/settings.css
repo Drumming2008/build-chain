@@ -70,9 +70,7 @@ input[type="radio"] {
     appearance: none;
     height: 1.25em;
     width: 1.25em;
-    margin: auto;
-    margin-bottom: 0;
-    margin-top: 8px;
+    margin: 8px auto 0;
     cursor: pointer;
     position: relative;
 }
@@ -103,7 +101,7 @@ input[type="radio"]:checked::after {
 
 label:has(input[type="radio"]) {
     transition: color 0.1s linear, var(--box-shadow-transition);
-    box-shadow: 0px 0px 0px 0 var(--accent);
+    box-shadow: 0 0 var(--accent);
 }
 
 label:has(input[type="radio"]:checked) {
@@ -112,5 +110,5 @@ label:has(input[type="radio"]:checked) {
 }
 
 label:has(input[type="radio"]:focus-visible) {
-    box-shadow: 0px 0px 0px 2px var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
 }

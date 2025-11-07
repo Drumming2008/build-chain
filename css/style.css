@@ -1,10 +1,10 @@
 :focus {
     outline: none;
-    box-shadow: 0px 0px 0px 0 var(--accent);
+    box-shadow: 0 0 var(--accent);
 }
 
 :not(input):focus-visible {
-    box-shadow: 0px 0px 0px 2px var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
 }
 
 * {

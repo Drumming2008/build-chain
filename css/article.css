@@ -1,14 +1,13 @@
 article {
     height: calc(100% - 56px);
     width: var(--article-width);
-    /* margin: 0 calc((100vw - var(--article-width)) / 2); */
     position: absolute;
     bottom: 0;
     right: calc((100vw - var(--article-width)) / 2);
     overflow: auto;
     padding: 16px;
 
-    font-family: var(--article-font) /* maybe we can let the user change the font this uses? */;
+    font-family: var(--article-font);
     background: var(--bg-0);
 
     transition: right 0.4s ease;

@@ -109,12 +109,11 @@ function loadSettings() {
           localStorage.setItem(i.label.toLowerCase(), b.value)
         }
 
-        if (localStorage.getItem(i.label.toLowerCase())) {
-          if (localStorage.getItem(i.label.toLowerCase()) == b.value) button.click()
-        } else if (b.default) {
+        let savedValue = localStorage.getItem(i.label.toLowerCase())
+        if (savedValue == b.value || b.default) {
           button.click()
         }
-        
+
         label.append(button)
         innerWrapper.append(label)
       }
@@ -125,9 +124,11 @@ function loadSettings() {
 loadSettings()
 
 function setTheme(value) {
-  if (value == "light") document.documentElement.id = "light"
-  else if (value == "dark") document.documentElement.id = "dark"
-  else if (value == "auto") document.documentElement.id = (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+  if (value == "auto") {
+    document.documentElement.id = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  } else {
+    document.documentElement.id = value
+  }
 }
 
 function setArticleFont(font) {

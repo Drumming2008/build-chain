@@ -15,25 +15,14 @@ id("close-panel").onclick = () => {
     closePanel()
 }
 
-function openPanel(name, data = null) {
-    for (let i of document.querySelectorAll("#panel > [data-panel]")) {
-        i.style.display = "none"
-    }
+async function updateDictionaryContent(data) {
+    let wrapper = id("dictionary-entries")
+    wrapper.innerHTML = ""
 
-    id("panel").style.display = ""
-    setTimeout(() => {
-        id("panel").style.right = "8px"
-    }, 0)
-    let panelContent = document.querySelector(`#panel > [data-panel="${name}"]`)
-    panelContent.style.display = ""
-    id("article").style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
+    let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${data}`)
 
-
-    if (name == "dictionary") {
-        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${data}`).then(r => {
-
-            /* 
-            [
+/*
+[
     {
         "word": "really",
         "phonetic": "/ˈɹɪəli/",
@@ -61,18 +50,7 @@ function openPanel(name, data = null) {
                         "synonyms": [],
                         "antonyms": []
                     },
-                    {
-                        "definition": "(modal) Actually; in fact; in reality.",
-                        "synonyms": [],
-                        "antonyms": [],
-                        "example": "\"He really is a true friend.\" / \"Really? What makes you so sure?\""
-                    },
-                    {
-                        "definition": "(as an intensifier) Very (modifying an adjective); very much (modifying a verb).",
-                        "synonyms": [],
-                        "antonyms": [],
-                        "example": "But ma, I really, really want to go to the show!"
-                    }
+                    ...
                 ],
                 "synonyms": [
                     "actually",
@@ -92,24 +70,7 @@ function openPanel(name, data = null) {
                         "antonyms": [],
                         "example": "A: He won the Nobel Prize yesterday."
                     },
-                    {
-                        "definition": "(sarcastic, typically exaggerated question.) Indicating that what was just said was obvious and unnecessary; contrived incredulity",
-                        "synonyms": [],
-                        "antonyms": [],
-                        "example": "A: I've just been reading Shakespeare - he's one of the best authors like, ever!"
-                    },
-                    {
-                        "definition": "Indicating affirmation, agreement.",
-                        "synonyms": [],
-                        "antonyms": [],
-                        "example": "A: That girl talks about herself way too much."
-                    },
-                    {
-                        "definition": "Indicating displeasure at another person's behaviour or statement.",
-                        "synonyms": [],
-                        "antonyms": [],
-                        "example": "Well, really! How rude."
-                    }
+                    ...
                 ],
                 "synonyms": [
                     "no kidding",
@@ -140,11 +101,7 @@ function openPanel(name, data = null) {
                         "synonyms": [],
                         "antonyms": []
                     },
-                    {
-                        "definition": "To ally anew; to re-form an alliance.",
-                        "synonyms": [],
-                        "antonyms": []
-                    }
+                    ...
                 ],
                 "synonyms": [],
                 "antonyms": []
@@ -160,67 +117,86 @@ function openPanel(name, data = null) {
         ]
     }
 ]
-            */
+*/
 
-            let wrapper = panelContent.children[1]
-            wrapper.innerHTML = ""
+    if (!response.ok) return // TODO: show error
 
-            if (r.ok) r.json().then(json => {
-                console.log(json)
-                for (let i of json) {
-                    let entry = document.createElement("div")
-                    entry.style.display = "flex"
-                    entry.style.flexDirection = "column"
-                    entry.style.gap = "8px"
-                    wrapper.append(entry)
+    let json = await response.json()
+    console.log(json)
 
-                    if (json[0].message) entry.innerHTML = `
-                        <h3>No Word Found</h3>
-                    `
+    for (let entry of json) {
+        let entryElem = document.createElement("div")
+        entryElem.style.display = "flex"
+        entryElem.style.flexDirection = "column"
+        entryElem.style.gap = "8px"
+        wrapper.append(entryElem)
 
-                    entry.innerHTML = `
-                        <h3>${capitalizeFirstLetter(i.word)} <span style="opacity: 0.5;">${i.phonetic || ""}</span></h3>
-                    `
+        if (json[0].message) {
+            entryElem.innerHTML = `
+                <h3>No Word Found</h3>
+            `
+        }
 
-                    if (i.meanings) for (let j of i.meanings) {
-                        entry.innerHTML += `
-                            <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalizeFirstLetter(j.partOfSpeech)}</h4>
-                        `
-                        for (let k of j.definitions) {
-                            entry.innerHTML += `
-                                ${k.definition}
-                            `
-                        }
-                    }
+        entryElem.innerHTML = `
+            <h3>${capitalizeFirstLetter(entry.word)} <span style="opacity: 0.5;">${entry.phonetic || ""}</span></h3>
+        `
 
-
-                    if (i.phonetics) for (let p of i.phonetics) {
-                        if (p.audio) {
-                            let audioButton = document.createElement("button")
-                            audioButton.classList.add("dictionary-audio")
-                            audioButton.classList.add("secondary")
-                            let audioIcon = document.createElement("i")
-                            audioIcon.className = "ph ph-speaker-high"
-                            audioButton.append(audioIcon)
-                            entry.querySelector("h3").append(audioButton)
-                            
-                            let audio = new Audio(p.audio)
-
-                            audio.onended = () => {
-                                audioIcon.classList.remove("ph-fill")
-                                audioIcon.classList.add("ph")
-                            }
-
-                            audioButton.onclick = () => {
-                                audio.currentTime = 0
-                                audio.play()
-                                audioIcon.classList.add("ph-fill")
-                                audioIcon.classList.remove("ph")
-                            }
-                        }
-                    }
+        if (entry.meanings) {
+            for (let meaning of entry.meanings) {
+                entryElem.innerHTML += `
+                    <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalizeFirstLetter(meaning.partOfSpeech)}</h4>
+                `
+                for (let defn of meaning.definitions) {
+                    entryElem.innerHTML += defn.definition
                 }
-            })
-        })
+            }
+        }
+
+        if (entry.phonetics) {
+            for (let phonetic of entry.phonetics) {
+                if (!phonetic.audio) continue
+
+                let audioButton = document.createElement("button")
+                audioButton.classList.add("dictionary-audio")
+                audioButton.classList.add("secondary")
+                let audioIcon = document.createElement("i")
+                audioIcon.className = "ph ph-speaker-high"
+                audioButton.append(audioIcon)
+                entryElem.querySelector("h3").append(audioButton)
+
+                let audio = new Audio(phonetic.audio)
+
+                audio.onended = () => {
+                    audioIcon.classList.remove("ph-fill")
+                    audioIcon.classList.add("ph")
+                }
+
+                audioButton.onclick = () => {
+                    audio.currentTime = 0
+                    audio.play()
+                    audioIcon.classList.add("ph-fill")
+                    audioIcon.classList.remove("ph")
+                }
+            }
+        }
+    }
+}
+
+function openPanel(name, data = null) {
+    for (let i of document.querySelectorAll("#panel > [data-panel]")) {
+        i.style.display = "none"
+    }
+
+    id("panel").style.display = ""
+    setTimeout(() => {
+        id("panel").style.right = "8px"
+    }, 0)
+    let panelContent = document.querySelector(`#panel > [data-panel="${name}"]`)
+    panelContent.style.display = ""
+    id("article").style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
+
+
+    if (name == "dictionary") {
+        updateDictionaryContent(data)
     }
 }
