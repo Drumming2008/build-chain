@@ -1,8 +1,11 @@
-document.onmouseup = () => {
+document.onmouseup = e => {
+  if (e.target.closest(".dictionary-button")) return
+
   let selection = window.getSelection()
   if (selection.rangeCount !== 1 || selection.isCollapsed) return
 
-  let range = selection.getRangeAt(0)
+  // in older safari, the range can apparently get retroactively modified after it is queried, so need to clone it
+  let range = selection.getRangeAt(0).cloneRange()
   if (!range.toString().trim() || !articleElem.contains(range.commonAncestorContainer)) return
 
   // truly terrible code to get the surrounding text of the user's selection by extending the dom selection
@@ -17,7 +20,7 @@ document.onmouseup = () => {
   selection.removeAllRanges()
   selection.addRange(range)
 
-  let word = extendedText.match(/^.?\s*[^a-zà-öø-ýÿ]([a-zà-öø-ýÿ'‘’-]+)[^a-zà-öø-ýÿ]\s*.?$/is)?.[1]
+  let word = extendedText.match(/^.?\s*[^a-zà-öø-ýÿ]([a-zà-öø-ýÿ'‘’-]+)[^a-zà-öø-ýÿ]\s*.?$/i)?.[1]
   if (!word) return
 
   // there can be multiple rects but it seems like only one ever has a width, so just take the widest one
