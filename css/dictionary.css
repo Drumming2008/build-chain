@@ -1,37 +1,18 @@
 .dictionary-button {
   position: absolute;
-  margin: -4px;
-  padding: 4px;
-  height: 28px;
+  width: 28px;
   aspect-ratio: 1;
-  font-family: var(--article-font);
-  outline: 1px solid var(--border);
+  background: var(--bg-0);
+  border: 1px solid var(--border);
   border-radius: 100px;
-  white-space: nowrap;
   transform: translateX(-50%);
   animation: dictionary-button-enter 0.2s cubic-bezier(0,.72,.21,1);
+  transition: border-color 0.1s linear, var(--btn-transition);
 }
 
 .dictionary-button:hover {
-  outline-color: transparent;
-}
-
-.dictionary-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--bg-0);
-  z-index: -1;
-  border-radius: inherit;
-}
-
-.dictionary-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  z-index: -1;
-  border-radius: inherit;
+  border-color: var(--bg-4);
+  background: var(--bg-2);
 }
 
 @keyframes dictionary-button-enter {

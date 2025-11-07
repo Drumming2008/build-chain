@@ -29,8 +29,8 @@ document.onmouseup = () => {
   selectionButton.style.position = "absolute"
 
   function updatePosition() {
-    selectionButton.style.left = rect.left + rect.width / 2 + 4 + "px"
-    selectionButton.style.top = rect.top + rect.height + 8 + "px"
+    selectionButton.style.left = rect.left + rect.width / 2 + "px"
+    selectionButton.style.top = rect.top + rect.height + 4 + "px"
   }
 
   updatePosition()

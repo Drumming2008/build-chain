@@ -47,10 +47,11 @@ ul, ol {
 
 button {
   cursor: pointer;
-  transition: background 0.1s linear, var(--box-shadow-transition), outline 0.1s linear;
   display: flex;
   align-items: center;
   justify-content: center;
+  --btn-transition: background 0.1s linear, var(--box-shadow-transition), outline 0.1s linear;
+  transition: var(--btn-transition);
 }
 
 .pill {
