@@ -77,99 +77,99 @@ async function updateDictionaryContent(data) {
 
   /*
   [
-      {
-          "word": "really",
-          "phonetic": "/ˈɹɪəli/",
-          "phonetics": [
-              {
-                  "text": "/ˈɹɪəli/",
-                  "audio": ""
-              },
-              {
-                  "text": "/ˈɹi.əli/",
-                  "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/really-1-us.mp3",
-                  "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=1217915",
-                  "license": {
-                      "name": "BY-SA 3.0",
-                      "url": "https://creativecommons.org/licenses/by-sa/3.0"
-                  }
-              }
-          ],
-          "meanings": [
-              {
-                  "partOfSpeech": "adverb",
-                  "definitions": [
-                      {
-                          "definition": "In a way or manner that is real, not unreal.",
-                          "synonyms": [],
-                          "antonyms": []
-                      },
-                      ...
-                  ],
-                  "synonyms": [
-                      "actually",
-                      "in fact",
-                      "indeed",
-                      "truly",
-                      "so"
-                  ],
-                  "antonyms": []
-              },
-              {
-                  "partOfSpeech": "interjection",
-                  "definitions": [
-                      {
-                          "definition": "Indicating surprise at, or requesting confirmation of, some new information; to express skepticism.",
-                          "synonyms": [],
-                          "antonyms": [],
-                          "example": "A: He won the Nobel Prize yesterday."
-                      },
-                      ...
-                  ],
-                  "synonyms": [
-                      "no kidding",
-                      "no really",
-                      "oh really",
-                      "you don't say"
-                  ],
-                  "antonyms": []
-              }
-          ],
+    {
+      "word": "really",
+      "phonetic": "/ˈɹɪəli/",
+      "phonetics": [
+        {
+          "text": "/ˈɹɪəli/",
+          "audio": ""
+        },
+        {
+          "text": "/ˈɹi.əli/",
+          "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/really-1-us.mp3",
+          "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=1217915",
           "license": {
-              "name": "CC BY-SA 3.0",
-              "url": "https://creativecommons.org/licenses/by-sa/3.0"
-          },
-          "sourceUrls": [
-              "https://en.wiktionary.org/wiki/really"
-          ]
+            "name": "BY-SA 3.0",
+            "url": "https://creativecommons.org/licenses/by-sa/3.0"
+          }
+        }
+      ],
+      "meanings": [
+        {
+          "partOfSpeech": "adverb",
+          "definitions": [
+            {
+              "definition": "In a way or manner that is real, not unreal.",
+              "synonyms": [],
+              "antonyms": []
+            },
+            ...
+          ],
+          "synonyms": [
+            "actually",
+            "in fact",
+            "indeed",
+            "truly",
+            "so"
+          ],
+          "antonyms": []
+        },
+        {
+          "partOfSpeech": "interjection",
+          "definitions": [
+            {
+              "definition": "Indicating surprise at, or requesting confirmation of, some new information; to express skepticism.",
+              "synonyms": [],
+              "antonyms": [],
+              "example": "A: He won the Nobel Prize yesterday."
+            },
+            ...
+          ],
+          "synonyms": [
+            "no kidding",
+            "no really",
+            "oh really",
+            "you don't say"
+          ],
+          "antonyms": []
+        }
+      ],
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0"
       },
-      {
-          "word": "really",
-          "phonetics": [],
-          "meanings": [
-              {
-                  "partOfSpeech": "verb",
-                  "definitions": [
-                      {
-                          "definition": "To bring together again.",
-                          "synonyms": [],
-                          "antonyms": []
-                      },
-                      ...
-                  ],
-                  "synonyms": [],
-                  "antonyms": []
-              }
+      "sourceUrls": [
+        "https://en.wiktionary.org/wiki/really"
+      ]
+    },
+    {
+      "word": "really",
+      "phonetics": [],
+      "meanings": [
+        {
+          "partOfSpeech": "verb",
+          "definitions": [
+            {
+              "definition": "To bring together again.",
+              "synonyms": [],
+              "antonyms": []
+            },
+            ...
           ],
-          "license": {
-              "name": "CC BY-SA 3.0",
-              "url": "https://creativecommons.org/licenses/by-sa/3.0"
-          },
-          "sourceUrls": [
-              "https://en.wiktionary.org/wiki/re-ally",
-              "https://en.wiktionary.org/wiki/really"
-          ]
-      }
+          "synonyms": [],
+          "antonyms": []
+        }
+      ],
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "sourceUrls": [
+        "https://en.wiktionary.org/wiki/re-ally",
+        "https://en.wiktionary.org/wiki/really"
+      ]
+    }
   ]
   */
 
@@ -187,19 +187,19 @@ async function updateDictionaryContent(data) {
 
     if (json[0].message) {
       entryElem.innerHTML = `
-                <h3>No Word Found</h3>
-            `
+        <h3>No Word Found</h3>
+      `
     }
 
     entryElem.innerHTML = `
-            <h3>${capitalizeFirstLetter(entry.word)} <span style="opacity: 0.5;">${entry.phonetic || ""}</span></h3>
-        `
+      <h3>${capitalizeFirstLetter(entry.word)} <span style="opacity: 0.5;">${entry.phonetic || ""}</span></h3>
+    `
 
     if (entry.meanings) {
       for (let meaning of entry.meanings) {
         entryElem.innerHTML += `
-                    <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalizeFirstLetter(meaning.partOfSpeech)}</h4>
-                `
+          <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalizeFirstLetter(meaning.partOfSpeech)}</h4>
+        `
         for (let defn of meaning.definitions) {
           entryElem.innerHTML += defn.definition
         }

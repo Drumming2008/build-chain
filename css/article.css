@@ -1,18 +1,18 @@
 article {
-    height: calc(100% - 56px);
-    width: var(--article-width);
-    position: absolute;
-    bottom: 0;
-    right: calc((100vw - var(--article-width)) / 2);
-    overflow: auto;
-    padding: 16px;
+  height: calc(100% - 56px);
+  width: var(--article-width);
+  position: absolute;
+  bottom: 0;
+  right: calc((100vw - var(--article-width)) / 2);
+  overflow: auto;
+  padding: 16px;
 
-    font-family: var(--article-font);
-    background: var(--bg-0);
+  font-family: var(--article-font);
+  background: var(--bg-0);
 
-    transition: right 0.4s ease;
+  transition: right 0.4s ease;
 }
 
 article :first-child {
-    margin-top: 0;
+  margin-top: 0;
 }

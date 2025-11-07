@@ -1,96 +1,96 @@
 :focus {
-    outline: none;
-    box-shadow: 0 0 var(--accent);
+  outline: none;
+  box-shadow: 0 0 var(--accent);
 }
 
 :not(input):focus-visible {
-    box-shadow: 0 0 0 2px var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 * {
-    box-sizing: border-box;
-    border: none;
-    padding: 0;
-    color: inherit;
-    background: transparent;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  color: inherit;
+  background: transparent;
 
-    line-height: 1.5; /* i know this should be bigger to actually be readable but idk what it should be, ayush prolly knows */
+  line-height: 1.5; /* i know this should be bigger to actually be readable but idk what it should be, ayush prolly knows */
 }
 
 :not(h1, h2, h3, h4, h5, h6, i) {
-    font-size: inherit;
+  font-size: inherit;
 }
 
 html, body {
-    margin: 0;
-    height: 100%;
-    color-scheme: dark;
-    background: var(--bg-0);
-    overflow: hidden;
-    color: var(--color);
+  margin: 0;
+  height: 100%;
+  color-scheme: dark;
+  background: var(--bg-0);
+  overflow: hidden;
+  color: var(--color);
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    flex-grow: 1;
-    padding-bottom: 8px;
-    height: 100%;
+  flex-grow: 1;
+  padding-bottom: 8px;
+  height: 100%;
 }
 
 /* buttons :) */
 
 button {
-    cursor: pointer;
-    transition: background 0.1s linear, var(--box-shadow-transition), outline 0.1s linear;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  cursor: pointer;
+  transition: background 0.1s linear, var(--box-shadow-transition), outline 0.1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pill {
-    padding: 0 16px;
-    border-radius: 100px;
-    min-height: 40px;
+  padding: 0 16px;
+  border-radius: 100px;
+  min-height: 40px;
 }
 
 /* secondary (basic gray button) */
 
 .secondary:hover {
-    background: var(--btn);
+  background: var(--btn);
 }
 
 .secondary:active {
-    background: var(--btn-active);
+  background: var(--btn-active);
 }
 
 #panel {
-    position: absolute;
-    right: 8px;
-    bottom: 8px;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
 
-    padding: 16px;
+  padding: 16px;
 
-    background: var(--bg-1);
-    border-radius: 16px;
-    width: var(--panel-width);
-    height: calc(100% - 72px);
-    transition: right 0.4s ease, width 0.4s ease;
-    overflow-y: auto;
+  background: var(--bg-1);
+  border-radius: 16px;
+  width: var(--panel-width);
+  height: calc(100% - 72px);
+  transition: right 0.4s ease, width 0.4s ease;
+  overflow-y: auto;
 }
 
 #panel h2:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 #close-panel {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }

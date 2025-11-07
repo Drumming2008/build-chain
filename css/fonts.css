@@ -1,38 +1,38 @@
 @font-face {
-    font-family: dm-serif-display;
-    src: url("../fonts/dm_serif_display.ttf");
+  font-family: dm-serif-display;
+  src: url("../fonts/dm_serif_display.ttf");
 }
 
 @font-face {
-    font-family: outfit;
-    src: url("../fonts/outfit.ttf");
+  font-family: outfit;
+  src: url("../fonts/outfit.ttf");
 }
 
 @font-face {
-    font-family: dyslexic-font;
-    src: url("../fonts/open_dyslexic_regular.woff");
+  font-family: dyslexic-font;
+  src: url("../fonts/open_dyslexic_regular.woff");
 }
 
 :root {
-    --header-font: dm-serif-display, serif;
-    --base-font: outfit, system-ui, sans-serif;
-    --article-font: serif;
+  --header-font: dm-serif-display, serif;
+  --base-font: outfit, system-ui, sans-serif;
+  --article-font: serif;
 }
 
 html {
-    font-family: var(--base-font);
+  font-family: var(--base-font);
 }
 
 * {
-    font-family: inherit;
+  font-family: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    /* font-family: var(--header-font); */
-    font-weight: inherit;
+  /* font-family: var(--header-font); */
+  font-weight: inherit;
 }
 
 ::placeholder {
-    color: var(--color);
-    opacity: 0.5;
+  color: var(--color);
+  opacity: 0.5;
 }

@@ -1,81 +1,81 @@
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 64px;
-    flex-shrink: 0;
-    background: var(--bg-0);
-    position: relative;
-    z-index: 2;
-    padding: 0 64px 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  flex-shrink: 0;
+  background: var(--bg-0);
+  position: relative;
+  z-index: 2;
+  padding: 0 64px 0 8px;
 }
 
 #progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2px;
-    background: var(--accent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
 }
 
 #search-wrapper {
-    width: var(--article-width);
-    max-width: calc(100vw - 128px);
-    position: relative;
-    left: 28px;
+  width: var(--article-width);
+  max-width: calc(100vw - 128px);
+  position: relative;
+  left: 28px;
 }
 
 #search {
-    height: 48px;
-    border-radius: 100px;
-    padding-left: 24px;
-    padding-right: 48px;
-    border: none;
-    width: 100%;
-    background: var(--bg-1);
+  height: 48px;
+  border-radius: 100px;
+  padding-left: 24px;
+  padding-right: 48px;
+  border: none;
+  width: 100%;
+  background: var(--bg-1);
 }
 
 #search-button {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    position: absolute;
-    right: 4px;
-    top: 4px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 4px;
+  top: 4px;
 }
 
 #regenerate-controls {
-    position: absolute;
-    top: 0;
-    left: 8px;
-    right: 8px;
-    height: 56px;
-    display: none;
-    padding: 0 16px;
-    background: var(--bg-1);
-    gap: 8px;
-    z-index: 3;
-    border-radius: 0 0 16px 16px;
-    align-items: center;
-    overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 8px;
+  right: 8px;
+  height: 56px;
+  display: none;
+  padding: 0 16px;
+  background: var(--bg-1);
+  gap: 8px;
+  z-index: 3;
+  border-radius: 0 0 16px 16px;
+  align-items: center;
+  overflow: auto;
 }
 
 #regenerate-controls select {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #regenerate-button {
-    position: absolute;
-    left: 8px;
+  position: absolute;
+  left: 8px;
 }
 
 #settings-button {
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    position: absolute;
-    right: 8px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
 }
