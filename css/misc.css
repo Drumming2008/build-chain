@@ -34,7 +34,7 @@
   background: color-mix(in srgb, var(--accent), transparent);
 }
 
-i {
+i:is(.ph, .ph-fill) {
   font-size: 1.25rem;
 }
 

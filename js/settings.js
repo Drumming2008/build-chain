@@ -1,5 +1,5 @@
 id("settings-button").onclick = () => {
-  openPanel("settings")
+  togglePanel("settings")
 }
 
 let settings = [

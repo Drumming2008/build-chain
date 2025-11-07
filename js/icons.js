@@ -1,4 +1,5 @@
-for (let weight of ["regular", "thin", "light", "bold", "fill", "duotone"]) {
+// "thin", "light", "bold", "duotone"
+for (let weight of ["regular", "fill"]) {
   let link = document.createElement("link")
   link.rel = "stylesheet"
   link.type = "text/css"

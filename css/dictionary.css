@@ -9,6 +9,7 @@
   border-radius: 100px;
   white-space: nowrap;
   transform: translateX(-50%);
+  animation: dictionary-button-enter 0.2s cubic-bezier(0,.72,.21,1);
 }
 
 .dictionary-button:hover {
@@ -31,6 +32,13 @@
   background: inherit;
   z-index: -1;
   border-radius: inherit;
+}
+
+@keyframes dictionary-button-enter {
+  from {
+    transform: translate(-50%, 10px);
+    opacity: 0;
+  }
 }
 
 #dictionary-entries {
