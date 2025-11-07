@@ -39,7 +39,7 @@
   gap: 8px;
 }
 
-#dictionary-entries > div > h3, #dictionary-entries > div > h4 {
+#dictionary-entries :is(h3, h4) {
   margin: 0;
 }
 
@@ -80,8 +80,15 @@
 #dictionary-entries ul {
   margin: 0;
 }
+
 #dictionary-entries ul > li {
   margin: 8px 0;
   font-weight: 300;
   color: var(--text-muted);
+}
+
+#word-not-found {
+  font-weight: 300;
+  color: var(--text-muted);
+  font-style: italic;
 }

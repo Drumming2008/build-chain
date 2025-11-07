@@ -41,7 +41,7 @@ document.onmouseup = () => {
   selectionButton.style.zIndex = 9999
 
   selectionButton.onclick = () => {
-    openPanel("dictionary", word.toLowerCase())
+    openDictionary(word.toLowerCase())
     for (let i of document.querySelectorAll(".dictionary-button")) {
       i.remove()
     }
@@ -55,17 +55,26 @@ document.onmouseup = () => {
   })
 }
 
-async function updateDictionaryContent(data) {
+async function openDictionary(word) {
+  openPanel("dictionary")
+
   let wrapper = id("dictionary-entries")
   wrapper.innerHTML = ""
 
-  let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${data}`)
-  if (!response.ok) return // TODO: show error
+  let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+  let failed = false, json
+  if (response.ok) {
+    json = await response.json()
+    if (json[0].message) failed = true
+  } else {
+    failed = true
+  }
 
-  let json = await response.json()
-
-  if (json[0].message) {
-    wrapper.innerHTML = "<h3>No Word Found</h3>"
+  if (failed) {
+    wrapper.innerHTML = `
+      <h3>${capitalize(word)}</h3>
+      <div id="word-not-found">Word not found</div>
+    `
     return
   }
 
@@ -77,12 +86,12 @@ async function updateDictionaryContent(data) {
     wrapper.append(entryElem)
 
     let html = `
-      <h3>${capitalizeFirstLetter(entry.word)} <span>${entry.phonetic || ""}</span></h3>
+      <h3>${capitalize(entry.word)} <span>${entry.phonetic || ""}</span></h3>
     `
 
     for (let meaning of entry.meanings || []) {
       html += `
-        <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalizeFirstLetter(meaning.partOfSpeech)}</h4>
+        <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalize(meaning.partOfSpeech)}</h4>
       `
       if (meaning.definitions?.length) {
         html += "<ul>"

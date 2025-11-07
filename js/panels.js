@@ -17,7 +17,7 @@ id("close-panel").onclick = () => {
   closePanel()
 }
 
-function openPanel(name, data = null) {
+function openPanel(name) {
   for (let i of document.querySelectorAll("#panel > [data-panel]")) {
     i.style.display = "none"
   }
@@ -29,11 +29,6 @@ function openPanel(name, data = null) {
   let panelContent = document.querySelector(`#panel > [data-panel="${name}"]`)
   panelContent.style.display = ""
   articleElem.style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
-
-
-  if (name == "dictionary") {
-    updateDictionaryContent(data)
-  }
 
   if (name == "more-fonts") {
     
