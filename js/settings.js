@@ -28,6 +28,7 @@ let settings = [
     label: "Article Font",
     function: "setArticleFont",
     vertical: true,
+    innerID: "fonts-inner-wrapper",
     buttons: [
       {
         label: "Times New Roman",
@@ -76,62 +77,81 @@ let settings = [
 function loadSettings() {
   id("settings-content").innerHTML = ""
   for (let i of settings) {
-    let settingWrapper = document.createElement("div")
-    settingWrapper.classList.add("setting-wrapper")
-    id("settings-content").append(settingWrapper)
+    createSetting(i)
+  }
+}
 
+function createSetting(i, parent = id("settings-content")) {
+  let settingWrapper = document.createElement("div")
+  settingWrapper.classList.add("setting-wrapper")
+  parent.append(settingWrapper)
+
+  if (!i.noLabel) {
     let label = document.createElement("label")
     label.innerHTML = `<h3>${i.label}</h3>`
     settingWrapper.append(label)
+  }
 
-    let innerWrapper = document.createElement("div")
-    innerWrapper.classList.add("settings-inner-wrapper")
-    if (i.vertical) {
-      innerWrapper.style.flexDirection = "column"
-      innerWrapper.classList.add("vertical")
-    }
-    settingWrapper.append(innerWrapper)
+  let innerWrapper = document.createElement("div")
+  innerWrapper.classList.add("settings-inner-wrapper")
+  if (i.innerID) innerWrapper.id = i.innerID
+  if (i.vertical) {
+    innerWrapper.style.flexDirection = "column"
+    innerWrapper.classList.add("vertical")
+  }
+  settingWrapper.append(innerWrapper)
 
-    if (i.type == "radio") {
-      settingWrapper.classList.add("setting-wrapper-radio")
-      for (let b of i.buttons) {
-        if (b.type == "button") {
-          let button = document.createElement("button")
-          button.innerText = b.label
-          button.className = "secondary pill"
-          innerWrapper.append(button)
-          button.onclick = b.click
-          continue
-        }
-
-        let label = document.createElement("label")
-        label.innerText = b.label
-        label.classList.add("settings-radio-label")
-        label.classList.add("secondary")
-        if (b.labelStyle) label.style.cssText = b.labelStyle
-        let button = document.createElement("input")
-        button.type = "radio"
-        button.value = b.value
-        button.name = i.label.toLowerCase()
-
-        button.onclick = () => {
-          window[i.function](b.value)
-          localStorage.setItem(i.label.toLowerCase(), b.value)
-        }
-
-        let savedValue = localStorage.getItem(i.label.toLowerCase())
-        if (savedValue == b.value || b.default) {
-          button.click()
-        }
-
-        label.append(button)
-        innerWrapper.append(label)
+  if (i.type == "radio") {
+    settingWrapper.classList.add("setting-wrapper-radio")
+    for (let b of i.buttons) {
+      if (b.type == "button") {
+        let button = document.createElement("button")
+        button.innerText = b.label
+        button.className = "secondary pill button-in-radios"
+        innerWrapper.append(button)
+        innerWrapper.style.paddingBottom = "48px"
+        button.onclick = b.click
+        continue
       }
+
+      createRadioButton(b, i, innerWrapper)
     }
   }
 }
 
+function createRadioButton(b, i, innerWrapper) {
+  let label = document.createElement("label")
+  label.innerText = b.label
+  label.classList.add("settings-radio-label")
+  label.classList.add("secondary")
+  if (b.labelStyle) label.style.cssText = b.labelStyle
+  let button = document.createElement("input")
+  button.type = "radio"
+  button.value = b.value
+  button.name = i.label.toLowerCase()
+
+  button.onclick = () => {
+    window[i.function](b.value)
+    localStorage.setItem(i.label.toLowerCase(), b.value)
+  }
+
+  let savedValue = localStorage.getItem(i.label.toLowerCase())
+  if (savedValue == b.value || (!savedValue && b.default)) {
+    button.click()
+  }
+
+  label.append(button)
+  console.log(innerWrapper, i, id("fonts-inner-wrapper"))
+  innerWrapper.append(label)
+}
+
 loadSettings()
+
+for (let i of fontList[0].buttons) {
+  if (localStorage.getItem("article font") == i.value) {
+    createRadioButton(i, { label: "Article Font", function: "setArticleFont" }, id("fonts-inner-wrapper"))
+  }
+}
 
 function setTheme(value) {
   if (value == "auto") {
@@ -143,4 +163,14 @@ function setTheme(value) {
 
 function setArticleFont(font) {
   articleElem.style.fontFamily = font
+}
+
+id("fonts-back").onclick = () => {
+  openPanel("settings")
+}
+
+function moreFonts() {
+  for (let i of fontList) {
+    createSetting(i, id("fonts-content"))
+  }
 }

@@ -32,6 +32,7 @@
 .settings-inner-wrapper {
   display: flex;
   gap: 8px;
+  position: relative;
 }
 
 .setting-wrapper:not(:last-child) {
@@ -113,4 +114,23 @@ label:has(input[type="radio"]:checked) {
 
 label:has(input[type="radio"]:focus-visible) {
   box-shadow: 0 0 0 2px var(--accent);
+}
+
+.button-in-radios {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#more-fonts-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#fonts-back {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }

@@ -40,6 +40,6 @@ function openPanel(name) {
   articleElem.style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
 
   if (name == "more-fonts") {
-    
+    moreFonts()
   }
 }
