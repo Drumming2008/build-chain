@@ -39,7 +39,9 @@ function openPanel(name) {
   panelContent.style.display = ""
   articleElem.style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
 
-  if (name == "more-fonts") {
-    moreFonts()
-  }
+  if (name == "more-fonts") moreFonts()
+
+  if (name == "settings") addExtraFontButton()
 }
+
+let extraFontButton = null

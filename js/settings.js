@@ -79,6 +79,8 @@ function loadSettings() {
   for (let i of settings) {
     createSetting(i)
   }
+
+  addExtraFontButton()
 }
 
 function createSetting(i, parent = id("settings-content")) {
@@ -124,6 +126,9 @@ function createRadioButton(b, i, innerWrapper) {
   label.innerText = b.label
   label.classList.add("settings-radio-label")
   label.classList.add("secondary")
+
+  if (b.extraFontButton) label.id = "extra-font-button"
+
   if (b.labelStyle) label.style.cssText = b.labelStyle
   let button = document.createElement("input")
   button.type = "radio"
@@ -147,9 +152,15 @@ function createRadioButton(b, i, innerWrapper) {
 
 loadSettings()
 
-for (let i of fontList[0].buttons) {
-  if (localStorage.getItem("article font") == i.value) {
-    createRadioButton(i, { label: "Article Font", function: "setArticleFont" }, id("fonts-inner-wrapper"))
+function addExtraFontButton() {
+  for (let i of fontList[0].buttons) {
+    if (localStorage.getItem("article font") == i.value) {
+      if (extraFontButton != i.value) extraFontButton = i.value
+      else return
+      id("extra-font-button")?.remove()
+      i.extraFontButton = true
+      createRadioButton(i, { label: "Article Font", function: "setArticleFont" }, id("fonts-inner-wrapper"))
+    }
   }
 }
 
@@ -170,6 +181,7 @@ id("fonts-back").onclick = () => {
 }
 
 function moreFonts() {
+  id("fonts-content").innerHTML = ""
   for (let i of fontList) {
     createSetting(i, id("fonts-content"))
   }
