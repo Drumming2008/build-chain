@@ -146,7 +146,6 @@ function createRadioButton(b, i, innerWrapper) {
   }
 
   label.append(button)
-  console.log(innerWrapper, i, id("fonts-inner-wrapper"))
   innerWrapper.append(label)
 }
 
@@ -155,8 +154,14 @@ loadSettings()
 function addExtraFontButton() {
   for (let i of fontList[0].buttons) {
     if (localStorage.getItem("article font") == i.value) {
-      if (extraFontButton != i.value) extraFontButton = i.value
-      else return
+      if (extraFontButton != i.value) {
+        extraFontButton = i.value
+      } else {
+        setTimeout(() => {
+          id("extra-font-button")?.click(0)
+        }, 400) // this is annoying but without the delay it focuses the element as the panel slides in
+        return
+      }
       id("extra-font-button")?.remove()
       i.extraFontButton = true
       createRadioButton(i, { label: "Article Font", function: "setArticleFont" }, id("fonts-inner-wrapper"))
