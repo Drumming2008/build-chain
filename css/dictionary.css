@@ -55,6 +55,13 @@
   flex-wrap: wrap;
 }
 
+#dictionary-entries > div > h3 > span {
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: 85%;
+  margin: 2px 0 0 2px;
+}
+
 #dictionary-entries > div > h3 > * {
   white-space: nowrap;
 }
@@ -68,4 +75,14 @@
 
 .dictionary-audio:first-of-type {
   margin-left: auto;
+}
+
+#dictionary-entries ul {
+  margin: 0;
+}
+#dictionary-entries ul > li {
+  margin: 8px 0;
+  font-size: 90%;
+  font-weight: 300;
+  color: var(--text-muted);
 }

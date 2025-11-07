@@ -142,5 +142,5 @@ function setTheme(value) {
 }
 
 function setArticleFont(font) {
-  id("article").style.fontFamily = font
+  articleElem.style.fontFamily = font
 }

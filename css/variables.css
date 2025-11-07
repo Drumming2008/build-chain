@@ -12,7 +12,8 @@
   --btn: #b1bdcd7f;
   --btn-hover: #9ba8b87f;
 
-  --color: #0a0b0d;
+  --text: #0a0b0d;
+  --text-muted: #707179;
 
   --accent: #185eaa;
 }
@@ -31,7 +32,8 @@
   --btn: #4d565b7f;
   --btn-hover: #606b717f;
 
-  --color: #ffffff;
+  --text: #ffffff;
+  --text-muted: #c9cbd5;
 
   --accent: #55aede;
 

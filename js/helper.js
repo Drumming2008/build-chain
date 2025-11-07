@@ -5,3 +5,4 @@ function id(id) {
 function capitalizeFirstLetter(val) {
   return val[0].toUpperCase() + val.slice(1)
 }
+

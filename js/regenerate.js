@@ -16,7 +16,7 @@ id("regenerate-go").onclick = async () => {
   let length = id("length-select").value
   let technicalness = id("technicalness-select").value
 
-  let articleContent = id("article").innerText
+  let articleContent = articleElem.innerText
 
   setStatus("generating...")
   id("regenerate-go").disabled = true
@@ -46,8 +46,7 @@ Only return the rewritten text, nothing else.`
       throw new Error(`api error: ${response.status}`)
     }
 
-    let article = id("article")
-    article.innerHTML = ""
+    articleElem.innerHTML = ""
 
     let reader = response.body.getReader()
     let decoder = new TextDecoder()
@@ -67,7 +66,7 @@ Only return the rewritten text, nothing else.`
             let json = JSON.parse(line.slice(6))
             if (json.candidates && json.candidates[0].content) {
               let text = json.candidates[0].content.parts[0].text
-              article.innerHTML += text
+              articleElem.innerHTML += text
             }
           } catch (e) {}
         }

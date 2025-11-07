@@ -11,6 +11,8 @@ article {
   background: var(--bg-0);
 
   transition: right 0.4s ease;
+
+  line-height: 1.7;
 }
 
 article :first-child {

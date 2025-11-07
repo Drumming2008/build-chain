@@ -13,8 +13,6 @@
   padding: 0;
   color: inherit;
   background: transparent;
-
-  line-height: 1.5; /* i know this should be bigger to actually be readable but idk what it should be, ayush prolly knows */
 }
 
 :not(h1, h2, h3, h4, h5, h6, i) {
@@ -27,7 +25,7 @@ html, body {
   color-scheme: dark;
   background: var(--bg-0);
   overflow: hidden;
-  color: var(--color);
+  color: var(--text);
 }
 
 body {
@@ -39,6 +37,10 @@ main {
   flex-grow: 1;
   padding-bottom: 8px;
   height: 100%;
+}
+
+ul, ol {
+  padding-left: 2em;
 }
 
 /* buttons :) */
