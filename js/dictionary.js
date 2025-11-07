@@ -21,6 +21,7 @@ document.onmouseup = () => {
   if (!word) return
 
   // there can be multiple rects but it seems like only one ever has a width, so just take the widest one
+  let rect = [...range.getClientRects()].sort((a, b) => b.width - a.width)[0]
 
   let selectionButton = document.createElement("button")
   selectionButton.innerHTML = "<i class='ph ph-book-open-text'></i>"
