@@ -16,7 +16,7 @@ header {
     top: 0;
     left: 0;
     height: 2px;
-    background: var(--accent-0);
+    background: var(--accent);
 }
 
 #search-wrapper {

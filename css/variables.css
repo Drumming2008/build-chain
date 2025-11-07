@@ -33,7 +33,7 @@
 
     --color: #ffffff;
 
-    --accent-0: #55aede;
+    --accent: #55aede;
 
     --article-width: min(700px, calc(100vw - 16px));
     --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);

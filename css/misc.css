@@ -31,7 +31,7 @@
 }
 
 ::selection {
-    background: color-mix(in srgb, var(--accent-0), transparent);
+    background: color-mix(in srgb, var(--accent), transparent);
 }
 
 i {
