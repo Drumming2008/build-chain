@@ -2,7 +2,7 @@
   position: absolute;
   width: 28px;
   aspect-ratio: 1;
-  background: var(--bg-0);
+  background: var(--bg-1);
   border: 1px solid var(--border);
   border-radius: 100px;
   transform: translateX(-50%);
