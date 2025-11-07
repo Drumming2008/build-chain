@@ -16,6 +16,12 @@
     justify-content: end;
 }
 
+.vertical .settings-radio-label {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .setting-wrapper {
     display: flex;
     flex-direction: column;
@@ -55,6 +61,11 @@
     min-width: 30%;
 }
 
+.setting-wrapper-radio > .settings-inner-wrapper.vertical > label {
+    padding-top: 8px;
+    padding-left: 12px;
+}
+
 input[type="radio"] {
     appearance: none;
     height: 1.25em;
@@ -64,6 +75,11 @@ input[type="radio"] {
     margin-top: 8px;
     cursor: pointer;
     position: relative;
+}
+
+.vertical input[type="radio"] {
+    margin: 0;
+    margin-left: 8px;
 }
 
 input[type="radio"]::after {

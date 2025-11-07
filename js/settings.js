@@ -27,6 +27,7 @@ let settings = [
     type: "radio",
     label: "Article Font",
     function: "setArticleFont",
+    vertical: true,
     buttons: [
       {
         label: "Times New Roman",
@@ -59,6 +60,10 @@ for (let i of settings) {
 
   let innerWrapper = document.createElement("div")
   innerWrapper.classList.add("settings-inner-wrapper")
+  if (i.vertical) {
+    innerWrapper.style.flexDirection = "column"
+    innerWrapper.classList.add("vertical")
+  }
   settingWrapper.append(innerWrapper)
 
   if (i.type == "radio") {
