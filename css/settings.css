@@ -3,7 +3,37 @@
 }
 
 #panel h2 {
+    margin: -16px;
+    padding: 16px 0;
+    padding-bottom: 16px;
     margin-bottom: 16px;
+    position: sticky;
+    top: -16px;
+    background: var(--bg-1);
+    border-bottom: 4px solid var(--bg-0);
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+
+#panel h2::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    height: inherit;
+    width: 16px;
+    background: var(--bg-1);
+    border-bottom: inherit;
+}
+
+#panel h2::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    height: inherit;
+    width: 56px;
+    background: var(--bg-1);
+    border-bottom: inherit;
 }
 
 #settings-content {
@@ -127,11 +157,12 @@ label:has(input[type="radio"]:focus-visible) {
     background: var(--bg-2);
 }
 
-#more-fonts-header {
+#panel #more-fonts-header {
     display: flex;
     gap: 8px;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 #fonts-back {
@@ -150,7 +181,8 @@ label:has(input[type="radio"]:focus-visible) {
     padding-bottom: 16px;
     margin-bottom: 16px;
     background: var(--bg-1);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 4px solid var(--bg-0);
+    z-index: 3;
 }
 
 #more-fonts-search {

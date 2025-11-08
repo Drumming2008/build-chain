@@ -45,10 +45,6 @@
 
   --article-width: min(800px, calc(100vw - 16px));
   --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);
-
-  --sb-track-color: var(--btn);
-  --sb-thumb-color: var(--border);
-  --sb-size: 4px;
-
+  
   --box-shadow-transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
 }
