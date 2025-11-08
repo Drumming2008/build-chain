@@ -37,7 +37,7 @@
   --text-muted: #c9cbd5;
 
   --accent: #55aede;
-  --link: #91bcff;
+  --link: #91c1ff;
 
   --article-width: min(700px, calc(100vw - 16px));
   --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);
