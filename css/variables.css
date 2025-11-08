@@ -43,7 +43,7 @@
   --link: #91c1ff;
   --link-active: #71a1ef;
 
-  --article-width: min(700px, calc(100vw - 16px));
+  --article-width: min(800px, calc(100vw - 16px));
   --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);
 
   --sb-track-color: var(--btn);
