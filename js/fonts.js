@@ -7,7 +7,7 @@ let fontList = [
     vertical: true,
     buttons: [
       // Serif
-      
+
       { label: "Cardo", labelStyle: "font-family: 'Cardo', serif;", value: "'Cardo', serif" },
       { label: "Cormorant Garamond", labelStyle: "font-family: 'Cormorant Garamond', serif;", value: "'Cormorant Garamond', serif" },
       { label: "Crimson Pro", labelStyle: "font-family: 'Crimson Pro', serif;", value: "'Crimson Pro', serif" },

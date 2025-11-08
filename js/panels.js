@@ -27,7 +27,7 @@ function hideAllPanels(instant = false) {
         i.style.transform = ""
         i.style.display = "none"
         setTimeout(() => {
-            
+
         }, instant ? 0 : 400)
     }
 }
@@ -46,9 +46,9 @@ function openPanel(name) {
   panelContent.style.transform = "translateX(0)"
   articleElem.style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
 
-  if (name == "more-fonts") moreFonts()
+  if (name === "more-fonts") moreFonts()
 
-  if (name == "settings") addExtraFontButton()
+  if (name === "settings") addExtraFontButton()
 }
 
 let extraFontButton = null

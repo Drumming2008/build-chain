@@ -53,7 +53,7 @@ document.onmouseup = e => {
   document.body.appendChild(selectionButton)
 
   document.addEventListener("mousedown", e => {
-    if (e.target == selectionButton || e.target.parentElement.classList.contains("dictionary-button")) return
+    if (e.target === selectionButton || e.target.parentElement.classList.contains("dictionary-button")) return
     selectionButton.remove()
   })
 }

@@ -103,10 +103,10 @@ function createSetting(i, parent = id("settings-content")) {
   }
   settingWrapper.append(innerWrapper)
 
-  if (i.type == "radio") {
+  if (i.type === "radio") {
     settingWrapper.classList.add("setting-wrapper-radio")
     for (let b of i.buttons) {
-      if (b.type == "button") {
+      if (b.type === "button") {
         let button = document.createElement("button")
         button.innerText = b.label
         button.className = "secondary pill button-in-radios"
@@ -141,7 +141,7 @@ function createRadioButton(b, i, innerWrapper) {
   }
 
   let savedValue = localStorage.getItem(i.label.toLowerCase())
-  if (savedValue == b.value || (!savedValue && b.default)) {
+  if (savedValue === b.value || (!savedValue && b.default)) {
     button.click()
   }
 
@@ -153,7 +153,7 @@ loadSettings()
 
 function addExtraFontButton() {
   for (let i of fontList[0].buttons) {
-    if (localStorage.getItem("article font") == i.value) {
+    if (localStorage.getItem("article font") === i.value) {
       if (extraFontButton != i.value) {
         extraFontButton = i.value
       } else {
@@ -170,7 +170,7 @@ function addExtraFontButton() {
 }
 
 function setTheme(value) {
-  if (value == "auto") {
+  if (value === "auto") {
     document.documentElement.id = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
   } else {
     document.documentElement.id = value

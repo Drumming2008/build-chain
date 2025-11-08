@@ -8,7 +8,7 @@ function setStatus(message, isError = false) {
 
 id("regenerate-button").onclick = () => {
   let controls = id("regenerate-controls")
-  controls.style.display = controls.style.display == "none" ? "flex" : "none"
+  controls.style.display = controls.style.display === "none" ? "flex" : "none"
 }
 
 id("regenerate-go").onclick = async () => {
