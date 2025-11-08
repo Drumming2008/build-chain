@@ -192,9 +192,11 @@ function moreFonts() {
   }
 }
 
-id("more-fonts-search").oninput = () => {
+id("more-fonts-search").oninput = e => {
+  let search = e.target.value.trim().toLowerCase()
+
   for (let i of document.querySelectorAll("#fonts-content label")) {
     i.style.display = ""
-    if (!i.innerText.toLowerCase().includes(id("more-fonts-search").value.toLowerCase())) i.style.display = "none"
+    if (!i.innerText.toLowerCase().includes(search)) i.style.display = "none"
   }
 }
