@@ -31,15 +31,15 @@ let settings = [
     innerID: "fonts-inner-wrapper",
     buttons: [
       {
-        label: "Times New Roman",
-        labelStyle: "font-family: serif;",
-        value: "serif",
+        label: "Georgia",
+        labelStyle: "font-family: Georgia, serif;",
+        value: "Georgia",
         default: true
       },
       {
-        label: "Arial",
-        labelStyle: "font-family: Arial, sans-serif;",
-        value: "Arial, sans-serif"
+        label: "Helvetica Neue",
+        labelStyle: "font-family: 'Helvetica Neue', sans-serif;",
+        value: "'Helvetica Neue', sans-serif"
       },
       {
         label: "Open Dyslexic",
