@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+#panel h2 {
+    margin-bottom: 16px;
+}
+
 #settings-content {
   width: 100%;
   display: flex;
@@ -25,7 +29,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 8px;
 }
 
 .settings-inner-wrapper {
@@ -35,6 +38,7 @@
 }
 
 .setting-wrapper:not(:last-child) {
+    padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -120,16 +124,39 @@ label:has(input[type="radio"]:focus-visible) {
     left: 0;
     right: 0;
     bottom: 0;
+    background: var(--bg-2);
 }
 
 #more-fonts-header {
     display: flex;
     gap: 8px;
     align-items: center;
+    margin-bottom: 32px;
 }
 
 #fonts-back {
     height: 40px;
     width: 40px;
     border-radius: 50%;
+}
+
+#more-fonts-search-wrapper {
+    position: sticky;
+    top: -16px;
+    z-index: 2;
+    margin: -16px;
+    padding: 0 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    background: var(--bg-1);
+    border-bottom: 1px solid var(--border);
+}
+
+#more-fonts-search {
+    height: 40px;
+    border-radius: 100px;
+    background: var(--bg-2);
+    padding: 0 24px;
+    width: 100%;
 }

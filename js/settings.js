@@ -191,3 +191,10 @@ function moreFonts() {
     createSetting(i, id("fonts-content"))
   }
 }
+
+id("more-fonts-search").oninput = () => {
+  for (let i of document.querySelectorAll("#fonts-content label")) {
+    i.style.display = ""
+    if (!i.innerText.toLowerCase().includes(id("more-fonts-search").value.toLowerCase())) i.style.display = "none"
+  }
+}
