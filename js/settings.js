@@ -158,7 +158,7 @@ function addExtraFontButton() {
         extraFontButton = i.value
       } else {
         setTimeout(() => {
-          id("extra-font-button")?.click(0)
+          id("extra-font-button")?.click()
         }, 400) // this is annoying but without the delay it focuses the element as the panel slides in
         return
       }
