@@ -18,3 +18,12 @@ article {
 article :first-child {
   margin-top: 0;
 }
+
+article :is(h1, h2, h3, h4, h5, h6)::after {
+  content: '';
+  display: block;
+  background: var(--bg-3);
+  height: 2px;
+  border-radius: 2px;
+  margin-top: 2px;
+}
