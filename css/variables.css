@@ -16,7 +16,9 @@
   --text-muted: #484d54;
 
   --accent: #185eaa;
-  --link: #4891df;
+
+  --link: #2d7bce;
+  --link-active: #0d5bbe;
 }
 
 :root {
@@ -37,7 +39,9 @@
   --text-muted: #c9cbd5;
 
   --accent: #55aede;
+
   --link: #91c1ff;
+  --link-active: #71a1ef;
 
   --article-width: min(700px, calc(100vw - 16px));
   --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);
