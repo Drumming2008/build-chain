@@ -20,6 +20,7 @@ let fontList = [
       { label: "PT Serif", labelStyle: "font-family: 'PT Serif', serif;", value: "'PT Serif', serif" },
       { label: "Source Serif 4", labelStyle: "font-family: 'Source Serif 4', serif;", value: "'Source Serif 4', serif" },
       { label: "Spectral", labelStyle: "font-family: 'Spectral', serif;", value: "'Spectral', serif" },
+      { label: "Times New Roman", labelStyle: "font-family: 'Times New Roman', serif;", value: "'Times New Roman', serif" },
       { label: "Tinos", labelStyle: "font-family: 'Tinos', serif;", value: "'Tinos', serif" },
 
       // Sans Serif
