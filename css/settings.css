@@ -10,8 +10,8 @@
     position: sticky;
     top: 0;
     background: var(--bg-1);
-    border-bottom: 4px solid var(--bg-0);
-    height: 76px;
+    border-bottom: 1px solid var(--border);
+    height: 73px;
     display: flex;
     align-items: center;
     z-index: 2;
@@ -174,7 +174,7 @@ label:has(input[type="radio"]:focus-visible) {
 
 #more-fonts-search-wrapper {
     position: sticky;
-    top: 0;
+    top: 64px;
     z-index: 2;
     margin: -16px;
     padding: 0 16px;
@@ -182,7 +182,7 @@ label:has(input[type="radio"]:focus-visible) {
     padding-bottom: 16px;
     margin-bottom: 16px;
     background: var(--bg-1);
-    border-bottom: 4px solid var(--bg-0);
+    border-bottom: 1px solid var(--border);
     z-index: 3;
 }
 
