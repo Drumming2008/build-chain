@@ -41,7 +41,7 @@ function openPanel(name) {
     panelElem.style.right = "8px"
   }, 0)
 
-  
+
 
   articleElem.style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
 
