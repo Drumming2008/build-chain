@@ -11,7 +11,7 @@
     top: -16px;
     background: var(--bg-1);
     border-bottom: 4px solid var(--bg-0);
-    height: 72px;
+    height: 76px;
     display: flex;
     align-items: center;
 }

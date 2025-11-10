@@ -87,7 +87,7 @@ button {
   background: var(--bg-1);
   border-radius: 16px;
   width: var(--panel-width);
-  height: calc(100% - 72px);
+  height: calc(100% - 76px);
   transition: right 0.4s ease, width 0.4s ease;
   overflow-y: auto;
 }
