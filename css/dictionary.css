@@ -6,7 +6,7 @@
   border: 1px solid var(--border);
   border-radius: 100px;
   transform: translateX(-50%);
-  animation: dictionary-button-enter 0.2s cubic-bezier(0,.72,.21,1);
+  animation: dictionary-button-enter 0.2s cubic-bezier(0, 0.72, 0.21, 1);
   transition: border-color 0.1s linear, var(--btn-transition);
 }
 

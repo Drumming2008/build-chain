@@ -93,8 +93,8 @@ button {
 }
 
 #panel > div > h2 > i {
-    margin-right: 8px;
-    /* color: var(--accent); */
+  margin-right: 8px;
+  /* color: var(--accent); */
 }
 
 #close-panel {

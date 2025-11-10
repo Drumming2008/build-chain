@@ -23,27 +23,26 @@ function togglePanel(name) {
 }
 
 function hideAllPanels(instant = false) {
-    for (let i of document.querySelectorAll("#panel > [data-panel]")) {
-        i.style.transform = ""
-        i.style.display = "none"
-        setTimeout(() => {
-
-        }, instant ? 0 : 400)
-    }
+  for (let i of document.querySelectorAll("#panel > [data-panel]")) {
+    i.style.transform = ""
+    i.style.display = "none"
+  }
 }
 
 function openPanel(name) {
   panelOpen = true
 
-  hideAllPanels(true)
+  hideAllPanels()
 
   panelElem.style.display = ""
+  let panelContent = document.querySelector(`#panel > [data-panel="${name}"]`)
   setTimeout(() => {
+    panelContent.style.display = ""
     panelElem.style.right = "8px"
   }, 0)
-  let panelContent = document.querySelector(`#panel > [data-panel="${name}"]`)
-  panelContent.style.display = ""
-  panelContent.style.transform = "translateX(0)"
+
+  
+
   articleElem.style.right = "max((100vw - var(--article-width)) / 2, calc(var(--panel-width) + 16px))"
 
   if (name === "more-fonts") moreFonts()
