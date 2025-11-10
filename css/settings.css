@@ -8,12 +8,13 @@
     padding: 16px 0;
     padding-bottom: 16px;
     position: sticky;
-    top: -16px;
+    top: 0;
     background: var(--bg-1);
     border-bottom: 4px solid var(--bg-0);
     height: 76px;
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 #panel h2::before {
