@@ -3,11 +3,8 @@
 }
 
 #panel h2 {
-    margin: 0 -16px;
-    margin-bottom: 16px;
+    margin: 0 -16px 16px 0;
     padding: 16px 0;
-    margin-left: 0;
-    padding-bottom: 16px;
     position: sticky;
     top: 0;
     background: var(--bg-1);
@@ -176,12 +173,9 @@ label:has(input[type="radio"]:focus-visible) {
 #more-fonts-search-wrapper {
     position: sticky;
     top: 56px;
-    z-index: 2;
     margin: -16px;
-    padding: 0 16px;
-    padding-top: 16px;
-    padding-bottom: 16px;
     margin-bottom: 16px;
+    padding: 16px;
     background: var(--bg-1);
     border-bottom: 1px solid var(--border);
     z-index: 3;
