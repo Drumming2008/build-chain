@@ -82,9 +82,8 @@ button {
   position: absolute;
   right: 8px;
   bottom: 8px;
-
   padding: 16px;
-
+  padding-top: 0;
   background: var(--bg-1);
   border-radius: 16px;
   width: var(--panel-width);
@@ -93,10 +92,15 @@ button {
   overflow-y: auto;
 }
 
+#panel > div > h2 > i {
+    margin-right: 8px;
+    color: var(--accent);
+}
+
 #close-panel {
   position: sticky;
   float: right;
-  top: 0;
+  top: 16px;
   right: 0;
   width: 40px;
   height: 40px;
