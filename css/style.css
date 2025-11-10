@@ -94,7 +94,7 @@ button {
 
 #panel > div > h2 > i {
     margin-right: 8px;
-    color: var(--accent);
+    /* color: var(--accent); */
 }
 
 #close-panel {

@@ -6,6 +6,10 @@ i:is(.ph, .ph-fill) {
   font-size: 1.25rem;
 }
 
+h2 > i:is(.ph, .ph-fill) {
+    font-size: 1.5rem;
+}
+
 /* annoying little x button on input[type="search"] */
 ::-webkit-search-cancel-button {
   display: none;
