@@ -45,6 +45,11 @@ ul, ol {
 
 a {
   color: var(--link);
+  text-decoration-color: transparent;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
 }
 
 a:active {

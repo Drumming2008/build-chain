@@ -7,7 +7,7 @@ i:is(.ph, .ph-fill) {
 }
 
 h2 > i:is(.ph, .ph-fill) {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* annoying little x button on input[type="search"] */

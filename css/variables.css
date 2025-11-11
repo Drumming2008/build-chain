@@ -17,8 +17,7 @@
 
   --accent: #185eaa;
 
-  --link: #2d7bce;
-  --link-active: #0d5bbe;
+  --link: var(--accent);
 }
 
 :root {
@@ -40,8 +39,8 @@
 
   --accent: #55aede;
 
-  --link: #91c1ff;
-  --link-active: #71a1ef;
+  --link: var(--accent);
+  --link-active: color-mix(in srgb, var(--accent), var(--text) 25%);
 
   --article-width: min(800px, calc(100vw - 16px));
   --panel-width: max(calc((100vw - var(--article-width)) / 2 - 16px), 324px);
