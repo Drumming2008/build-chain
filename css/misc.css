@@ -1,5 +1,5 @@
 ::selection {
-  background: color-mix(in srgb, var(--accent), transparent);
+  background: color-mix(in srgb, var(--accent), transparent 70%);
 }
 
 i:is(.ph, .ph-fill) {
