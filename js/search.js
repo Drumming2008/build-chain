@@ -1,7 +1,6 @@
 let searchResultList = []
 
 function searchSites(text) {
-  
   /*
   
   {
@@ -12,6 +11,8 @@ function searchSites(text) {
   }
 
   */
+  id("search-button").style.display = "none"
+  id("search-x-button").style.display = "flex"
 
 
   search(text, {
@@ -41,12 +42,18 @@ function search(text, elems, baseURL, searchURL, siteName) {
         for (let i of articles) {
           let wrapper = document.createElement("div")
           wrapper.classList.add("search-result")
+          /* when you click the link instead of going to site it should actually use the proxy again to fetch the data,
+          but we prolly need a big object so it knows what element(s) has/have the content of the article for each different domain.
+          that would be a big pain, maybe there's a better way? */
           wrapper.innerHTML = `
             <h3><a href="${baseURL}${i.querySelector(elems.link).href.replace(location.origin, "")}">${i.querySelector(elems.title).innerText}</a></h3>
             <span>${i.querySelector(elems.desc).innerText}</span>
             <div class="search-result-site">${siteName}</div>
           `
           id("search-results").append(wrapper)
+          wrapper.onclick = e => {
+            if (e.target.nodeName != "A" && !e.shiftKey) wrapper.querySelector("a").click()
+          }
         }
       })
     }
@@ -61,4 +68,11 @@ id("search").onkeydown = e => {
 
 id("search-button").onclick = () => {
   searchSites(id("search").value)
+}
+
+id("search-x-button").onclick = () => {
+  id("search").value = ""
+  id("article").innerHTML = ""
+  id("search-button").style.display = "flex"
+  id("search-x-button").style.display = "none"
 }

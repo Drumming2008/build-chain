@@ -35,13 +35,17 @@ header {
   background: var(--bg-1);
 }
 
-#search-button {
+#search-button, #search-x-button {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   position: absolute;
   right: 4px;
   top: 4px;
+}
+
+#search-x-button {
+  display: none;
 }
 
 #regenerate-controls {

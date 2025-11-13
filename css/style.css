@@ -127,6 +127,7 @@ button {
   padding-bottom: 16px;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 
 .search-result > span {
@@ -146,7 +147,7 @@ button {
   font-size: 0.75em;
   right: -8px;
   top: 0;
-  background: var(--bg-2);
+  background: var(--btn);
   padding: 0 8px;
   border-radius: 100px;
   z-index: 2;
@@ -159,20 +160,24 @@ button {
   content: "";
   position: absolute;
   inset: -8px -16px;
-  background: var(--bg-1);
+  background: var(--btn);
   border-radius: 16px;
   z-index: -1;
   transform: scale(0.95);
   opacity: 0;
-  transition: opacity 0.1s linear, transform 0.2s ease;
+  transition: opacity 0.1s linear, transform 0.2s ease, background 0.1s linear;
 }
 
-.search-result:has(a:hover, a:focus-visible)::after {
+.search-result:is(:hover, :focus-within)::after {
   opacity: 1;
   transform: scale(1);
 }
 
-.search-result:has(a:hover, a:focus-visible) > .search-result-site {
+.search-result:is(:hover, :focus-within) > .search-result-site {
   opacity: 1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.search-result:active::after {
+  background: var(--btn-active);
 }

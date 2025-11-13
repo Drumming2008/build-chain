@@ -102,7 +102,7 @@
   padding-left: 12px;
   min-height: 40px;
   max-height: 40px;
-  transition: var(--box-shadow-transition);
+  transition: var(--box-shadow-transition), background 0.1s linear;
 }
 
 input[type="radio"] {
@@ -157,7 +157,11 @@ label:has(input[type="radio"]:focus-visible) {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bg-2);
+  background: var(--btn);
+}
+
+.button-in-radios:hover:not(:active) {
+  background: var(--btn-hover);
 }
 
 #panel #more-fonts-header {
