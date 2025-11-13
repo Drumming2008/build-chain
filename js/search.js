@@ -1,6 +1,7 @@
 let searchResultList = []
 
 function searchSites(text) {
+  searchResultList = []
   /*
   
   {
@@ -29,7 +30,7 @@ function searchSites(text) {
     link: ".gs_ri a"
   }, "", "https://scholar.google.com/scholar?q=", "Google Scholar")
 
-  id("article").innerHTML = `<div id="search-results"><h2>Results from ${searchResultList.join(", ")}</h2></div>`
+  id("article").innerHTML = `<div id="search-results"><h2>Results for "${text}" <span class="search-results-from">${searchResultList.join(", ")}</span></h2></div>`
 }
 
 function search(text, elems, baseURL, searchURL, siteName) {
@@ -64,6 +65,11 @@ id("search").onkeydown = e => {
   if (e.code == "Enter") {
     searchSites(id("search").value)
   }
+}
+
+id("search").oninput = () => {
+  id("search-button").style.display = "flex"
+  id("search-x-button").style.display = "none"
 }
 
 id("search-button").onclick = () => {
