@@ -15,7 +15,7 @@ article {
   line-height: 1.7;
 }
 
-article :first-child {
+article :first-child:not(h3) {
   margin-top: 0;
 }
 

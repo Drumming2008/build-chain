@@ -102,6 +102,7 @@
   padding-left: 12px;
   min-height: 40px;
   max-height: 40px;
+  transition: var(--box-shadow-transition);
 }
 
 input[type="radio"] {
