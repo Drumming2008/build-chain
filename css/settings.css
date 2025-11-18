@@ -40,6 +40,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .settings-radio-label {
@@ -65,7 +67,6 @@
   gap: 8px;
   position: relative;
   width: 100%;
-  max-width: 400px;
 }
 
 .setting-wrapper:not(:last-child) {

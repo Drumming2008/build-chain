@@ -64,6 +64,78 @@ async function openDictionary(word) {
   let wrapper = id("dictionary-entries")
   wrapper.innerHTML = ""
 
+  // let response = await fetch(`https://dictionary.cambridge.org/us/dictionary/english/${word}`)
+  // let failed = false, text
+  // if (response.ok) {
+  //   text = await response.text()
+  //   if (text[0].message) failed = true
+  // } else {
+  //   failed = true
+  // }
+
+  // if (failed) {
+  //   wrapper.innerHTML = `
+  //     <h3>${capitalize(word)}</h3>
+  //     <div id="word-not-found">Word not found</div>
+  //   `
+  //   return
+  // }
+
+  // let parser = new DOMParser().parseFromString(text, "text/html")
+
+  // for (let entry of parser.querySelectorAll(".box-posb")) {
+  //   let entryElem = document.createElement("div")
+  //   entryElem.style.display = "flex"
+  //   entryElem.style.flexDirection = "column"
+  //   entryElem.style.gap = "8px"
+  //   wrapper.append(entryElem)
+
+  //   let html = entry.innerText
+
+  //   // for (let meaning of entry.meanings || []) {
+  //   //   html += `
+  //   //     <h4 style="border-bottom: 1px solid var(--bg-5);">${capitalize(meaning.partOfSpeech)}</h4>
+  //   //   `
+  //   //   if (meaning.definitions?.length) {
+  //   //     html += "<ul>"
+  //   //     for (let defn of meaning.definitions) {
+  //   //       html += `<li>${defn.definition}</li>` // i love html injection
+  //   //     }
+  //   //     html += "</ul>"
+  //   //   }
+  //   // }
+
+  //   entryElem.innerHTML = html
+
+  //   // for (let phonetic of entry.phonetics || []) {
+  //   //   if (!phonetic.audio) continue
+
+  //   //   let audioButton = document.createElement("button")
+  //   //   audioButton.classList.add("dictionary-audio")
+  //   //   audioButton.classList.add("secondary")
+  //   //   let audioIcon = document.createElement("i")
+  //   //   audioIcon.className = "ph ph-speaker-high"
+  //   //   audioButton.append(audioIcon)
+  //   //   entryElem.querySelector("h3").append(audioButton)
+
+  //   //   let audio = new Audio(phonetic.audio)
+
+  //   //   audio.onended = () => {
+  //   //     audioIcon.classList.remove("ph-fill")
+  //   //     audioIcon.classList.add("ph")
+  //   //   }
+
+  //   //   audioButton.onclick = () => {
+  //   //     audio.currentTime = 0
+  //   //     audio.play()
+  //   //     audioIcon.classList.add("ph-fill")
+  //   //     audioIcon.classList.remove("ph")
+  //   //   }
+  //   // }
+  // }
+
+  // wiktionary maybe?
+
   let response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
   let failed = false, json
   if (response.ok) {

@@ -22,8 +22,7 @@ article :first-child:not(h3, h2) {
 article :is(h1, h2, h3, h4, h5, h6)::after {
   content: '';
   display: block;
-  background: var(--bg-3);
-  height: 2px;
-  border-radius: 2px;
+  background: var(--border);
+  height: 1px;
   margin-top: 2px;
 }
